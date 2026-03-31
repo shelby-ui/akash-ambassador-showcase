@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akash Student Program — Ambassador Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:       #FF4B55;
+      --red-light: #FF6B74;
+      --black:     #111111;
+      --gray-dark: #2C2C2C;
+      --gray-mid:  #6B6B6B;
+      --gray-light:#F0F0F0;
+      --white:     #FFFFFF;
+
+      /* Path colors */
+      --technical: #3B82F6;
+      --events:    #8B5CF6;
+      --content:   #F59E0B;
+      --community: #10B981;
+    }
+
+    body {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      background: #F8F8F8;
+      color: var(--black);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .hero {
+      background: var(--black);
+      padding: 60px 40px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(255,75,85,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(255,75,85,0.10) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .hero-logo img {
+      height: 72px;
+      width: auto;
+      display: block;
+    }
+    .hero-x-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 11px 22px;
+      border-radius: 100px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.18s, border-color 0.18s;
+    }
+    .hero-x-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -1px;
+      line-height: 1.1;
+      max-width: 720px;
+      margin: 0 auto 16px;
+    }
+    .hero h1 em { color: var(--red); font-style: normal; }
+    .hero p {
+      color: #AAAAAA;
+      font-size: 17px;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── STATS (dark, matching hero) ──────────────────────── */
+    .stats-ambassador-section {
+      background: var(--black);
+      padding: 44px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stats-ambassador-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 0% 50%, rgba(255,75,85,0.12) 0%, transparent 55%),
+                  radial-gradient(ellipse at 100% 50%, rgba(255,75,85,0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .stats-ambassador-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+    .stats-inner {
+      display: flex;
+      justify-content: center;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+    .stat {
+      flex: 1;
+      padding: 28px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-number {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--red);
+      letter-spacing: -1px;
+      line-height: 1;
+      display: block;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 6px;
+      display: block;
+    }
+    .ambassador-heading {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--black);
+      letter-spacing: -0.3px;
+      margin: 0 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--red);
+      display: inline-block;
+    }
+
+    /* ── PHOTO CAROUSEL ──────────────────────────────────── */
+    /* ── AMBASSADOR PHOTO CAROUSEL ───────────────────────── */
+    /* ── AMBASSADOR CAROUSEL (inside combined section) ────── */
+    .photo-carousel-section {
+      /* no background/border — handled by parent .stats-ambassador-section */
+    }
+    .photo-carousel-inner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .photo-carousel-label { display: none; /* replaced by .ambassador-heading */ }
+    .photo-carousel-track-wrap {
+      flex: 1;
+      overflow: hidden;
+      min-width: 0;
+    }
+    .photo-carousel-track {
+      display: flex;
+      gap: 0;
+      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .photo-carousel-slide {
+      flex: 0 0 14.2857%; /* 7 visible at once */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 8px;
+    }
+    .photo-carousel-slide:hover .slide-circle {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(255,75,85,0.35);
+      border-color: var(--red);
+    }
+    .slide-circle {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #E0E0E0;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      border: 2px solid #E8E8E8;
+    }
+    .slide-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .slide-circle-placeholder {
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      background: #F0F0F0;
+      border: 2px dashed #CCCCCC;
+      display: flex; align-items: center; justify-content: center;
+      color: #BBBBBB;
+      flex-shrink: 0;
+    }
+    .slide-name {
+      margin-top: 7px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.25;
+      max-width: 80px;
+    }
+    .slide-caption {
+      margin-top: 2px;
+      font-size: 10px;
+      color: var(--gray-mid);
+      font-weight: 400;
+      line-height: 1.25;
+      max-width: 80px;
+    }
+    .pca-btn {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: var(--red);
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.15s;
+      line-height: 1;
+    }
+    .pca-btn:hover { background: #e03040; transform: scale(1.1); }
+    .pca-btn:disabled { opacity: 0.25; cursor: default; transform: none; }
+    .pca-btn:disabled:hover { background: var(--red); }
+
+
+    @media (max-width: 700px) {
+      .photo-carousel-slide { flex: 0 0 25%; }
+      .photo-carousel-label { display: none; }
+      .slide-circle, .slide-circle-placeholder { width: 48px; height: 48px; }
+    }
+
+    /* ── TESTIMONIALS ─────────────────────────────────────── */
+    .testimonials-section {
+      max-width: 1100px;
+      margin: 0 auto 72px;
+      padding: 0 24px;
+    }
+    .testimonials-label {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--black);
+      letter-spacing: -0.3px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--red);
+      display: inline-block;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+    }
+    .tweet-card {
+      background: var(--white);
+      border: 1.5px solid #E8E8E8;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: box-shadow 0.18s;
+    }
+    .tweet-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+    .tweet-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tweet-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tweet-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: #E8E8E8;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #555;
+      flex-shrink: 0;
+    }
+    .tweet-name { font-size: 14px; font-weight: 700; line-height: 1.2; }
+    .tweet-handle { font-size: 12px; color: var(--gray-mid); }
+    .tweet-x-icon { color: #AAA; flex-shrink: 0; }
+    .tweet-body {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #333;
+    }
+    .tweet-body .highlight { color: var(--red); font-weight: 600; }
+
+    /* ── FILTERS ──────────────────────────────────────────── */
+    .filter-section {
+      max-width: 1100px;
+      margin: 36px auto 0;
+      padding: 0 24px;
+    }
+    .filter-label {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--black);
+      letter-spacing: -0.3px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--red);
+      display: inline-block;
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-btn {
+      padding: 9px 18px;
+      border-radius: 100px;
+      border: 1.5px solid #E0E0E0;
+      border-bottom-width: 3px;
+      background: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-mid);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .filter-btn:hover {
+      border-color: #C8C8C8;
+      border-bottom-color: var(--black);
+      color: var(--black);
+    }
+    .filter-btn.active {
+      border-color: #E0E0E0;
+      border-bottom-color: var(--black);
+      border-bottom-width: 3px;
+      color: var(--black);
+      background: var(--white);
+    }
+    .filter-btn[data-path="technical"]:hover,
+    .filter-btn[data-path="technical"].active  { border-bottom-color: var(--technical); color: var(--technical); }
+    .filter-btn[data-path="events"]:hover,
+    .filter-btn[data-path="events"].active     { border-bottom-color: var(--events);    color: var(--events); }
+    .filter-btn[data-path="content"]:hover,
+    .filter-btn[data-path="content"].active    { border-bottom-color: var(--content);   color: var(--content); }
+    .filter-btn[data-path="community"]:hover,
+    .filter-btn[data-path="community"].active  { border-bottom-color: var(--community); color: var(--community); }
+    .path-dot { display: none; }
+
+    /* ── GRID ─────────────────────────────────────────────── */
+    .grid-section {
+      max-width: 1100px;
+      margin: 32px auto 80px;
+      padding: 0 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── CARD ─────────────────────────────────────────────── */
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      border: 1.5px solid #E8E8E8;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      z-index: 2;
+      background: #D0D0D0; /* fallback for any unmatched path */
+    }
+    .card[data-path="technical"]::before  { background: var(--technical); }
+    .card[data-path="events"]::before     { background: var(--events); }
+    .card[data-path="content"]::before    { background: var(--content); }
+    .card[data-path="community"]::before  { background: var(--community); }
+
+    /* ── CARD CAROUSEL ──────────────────────────────────────── */
+    .card-carousel {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: #000;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .carousel-track img {
+      flex-shrink: 0;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 32px; height: 32px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s, opacity 0.15s;
+      z-index: 3;
+      opacity: 0;
+      line-height: 1;
+    }
+    .card-carousel:hover .carousel-btn { opacity: 1; }
+    .carousel-btn:hover { background: rgba(255,75,85,0.85); }
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+    .carousel-btn[disabled] { display: none; }
+    .carousel-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%; transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      z-index: 3;
+    }
+    .carousel-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .carousel-dot.active {
+      background: white;
+      transform: scale(1.3);
+    }
+    /* single image (no carousel chrome needed) */
+    .card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .card-body {
+      padding: 20px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.13), 0 4px 12px rgba(0,0,0,0.06);
+      border-color: #D0D0D0;
+    }
+    .card.hidden { display: none; }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .path-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 5px 12px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .path-badge.technical  { background: #EFF6FF; color: var(--technical); }
+    .path-badge.events     { background: #F5F3FF; color: var(--events); }
+    .path-badge.content    { background: #FFFBEB; color: #D97706; }
+    .path-badge.community  { background: #ECFDF5; color: #059669; }
+
+    .card-month {
+      font-size: 12px;
+      color: var(--gray-mid);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--red);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap 0.15s;
+    }
+    .card-link:hover { gap: 8px; }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid #F0F0F0;
+      margin-top: auto;
+    }
+    .avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .card[data-path="technical"] .avatar  { background: var(--technical); }
+    .card[data-path="events"] .avatar     { background: var(--events); }
+    .card[data-path="content"] .avatar    { background: var(--content); }
+    .card[data-path="community"] .avatar  { background: var(--community); }
+
+    .ambassador-info { flex: 1; }
+    .ambassador-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+    }
+    .ambassador-uni {
+      font-size: 12px;
+      color: var(--gray-mid);
+      margin-top: 2px;
+    }
+
+    /* ── FEATURED CARDS ───────────────────────────────────── */
+    .card-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .star-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.3px;
+    }
+    .pr-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--technical);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── NO RESULTS ───────────────────────────────────────── */
+    .no-results {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--gray-mid);
+      display: none;
+      grid-column: 1/-1;
+    }
+    .no-results.visible { display: block; }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 60px 24px;
+    }
+    footer h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    footer p {
+      color: #888;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.18s;
+    }
+    .cta-btn:hover { background: var(--red-light); }
+    .footer-copy {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 40px 20px 50px; }
+      .stats-inner { flex-wrap: wrap; }
+      .stat { flex: 1 1 50%; border-bottom: 1px solid #E8E8E8; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     📸 PHOTO CAROUSEL — Add event / ambassador photos here
+     Each entry: { src: "URL_or_base64", caption: "Label" }
+     Leave the array empty to show placeholder tiles.
+════════════════════════════════════════════════════════════ -->
+<script>
+const carouselPhotos = [
+  // { src: "https://example.com/photo.jpg", caption: "UPenn Blockchain Conference — March 2026" },
+  // { src: "https://example.com/photo2.jpg", caption: "MIT Bitcoin Expo — March 2026" },
+  // To add a photo: paste a URL or base64 string as the src value.
+];
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     🔧 EASY UPDATE ZONE — Edit contributions here each month
+     Add a new object to the array following the same format.
+     Paths: "technical" | "events" | "content" | "community"
+════════════════════════════════════════════════════════════ -->
+<script>
+const contributions = [
+  // ── ADD NEW ENTRIES HERE ──────────────────────────────────
+  // {
+  //   path: "technical",  // technical | events | content | community
+  //   title: "",
+  //   description: "",
+  //   ambassador: "",
+  //   university: "",
+  //   month: "March 2026",
+  //   link: "",
+  //   featured: true      // optional — pins to top of All tab with ⭐
+  // },
+  {
+    path: "content",
+    title: "Stress Testing Trust in Decentralized AI (Ongoing Experiment)",
+    description: "Building on Asad's article questioning the security of decentralized AI, this contribution highlights his follow-up experiments testing Byzantine-resilient defenses under real conditions. Across multiple attack types and non-IID data, the results show that widely cited defenses consistently fail, reinforcing the core issue: the infrastructure may work, but trust in the system is still unproven.",
+    ambassador: "Asad Rizvi",
+    university: "Cornell University",
+    month: "March 2026",
+    link: "https://x.com/carne_asado/status/2038917326511251918?s=46"
+  },
+  {
+    path: "technical",
+    title: "Gradio on Akash: ML Demos Made Deployable",
+    description: "Contributed a PR to awesome-akash adding a Gradio demo, making it easier to deploy and showcase machine learning interfaces on Akash. Bridges simple Python-based ML apps with decentralized compute, helping builders quickly go from local demos to live, shareable endpoints.",
+    ambassador: "Ensar Burrja",
+    university: "Stony Brook University",
+    month: "March 2026",
+    link: "https://github.com/akash-network/awesome-akash/tree/master/gradio-demo",
+    pr: true
+  },
+  {
+    path: "technical",
+    title: "1st Place at UPenn Blockchain Conference: On-Chain Analytics Pipeline on Akash",
+    description: "Won 1st place at the UPenn Blockchain Conference research competition by building a full-stack on-chain analytics pipeline for Cronos, from raw RPC data ingestion to investment-grade research reports. Powered entirely by compute on Akash Network, showcasing how decentralized infrastructure can support real-world blockchain research workflows.",
+    ambassador: "Nick Hardy & Tharun Ekambaram",
+    university: "Indiana University",
+    month: "March 2026",
+    link: "https://github.com/tharune/cronos-research",
+    featured: true
+  },
+  {
+    path: "community",
+    title: "From Onboarding to Bittensor Miner on Akash",
+    description: "Successfully onboarded a peer (Nathan) to Akash, walking through the console, Akash ML, and key community channels in Discord. He's now actively running a Bittensor miner on Akash. Strong example of students enabling students and driving real adoption of the decentralized cloud.",
+    ambassador: "Lucas Botbol",
+    university: "UT Austin",
+    month: "February 2026",
+    link: "https://x.com/BotbolLucas/status/2036658487921402046?s=20"
+  },
+  {
+    path: "community",
+    title: "From Idea to Deployment: Onboarding Builders to Akash",
+    description: "Onboarded two peers to Akash by helping them deploy their own multi-agent workflows. One built a system that scrapes top TikTok Shop products and generates UGC-style AI videos at scale, accessible via Telegram. The other deployed a workflow that scans Reddit communities and automates posting referral links (Acorns) to drive signups. Both moved from idea to live deployment on Akash.",
+    ambassador: "Michael Abril",
+    university: "Babson University",
+    month: "March 2026",
+    link: ""
+  },
+  {
+    path: "events",
+    title: "Deploy to the Supercloud: Akash Build Night @ USC",
+    description: "A hands-on build night where students deployed real GitHub projects to Akash, including OpenClaw and a Monte Carlo simulation. Strong engagement carried the session past its scheduled time, with multiple students continuing to actively build on Akash afterward.",
+    ambassador: "Alex Diaz",
+    university: "University of Southern California",
+    month: "March 2026",
+    link: ""
+  },
+  {
+    path: "technical",
+    title: "Bittensor Miner Setup on Akash",
+    description: "Step-by-step guide to launching a Bittensor miner on Akash Network, from wallet setup to deployment.",
+    ambassador: "Lucas Botbol",
+    university: "UT Austin",
+    month: "March 2026",
+    link: "https://x.com/BotbolLucas/status/2036658487921402046?s=20"
+  },
+  {
+    path: "technical",
+    title: "Autoresearch-at-Home Template Contribution",
+    description: "Built and contributed an autoresearch-at-home template, enabling collaborative AI research workflows on Akash.",
+    ambassador: "Asad Rizvi",
+    university: "Cornell University",
+    month: "March 2026",
+    link: "https://github.com/akash-network/awesome-akash/pull/782",
+    pr: true
+  },
+  {
+    path: "content",
+    title: "The Backdoor in the Machine: Why Decentralized AI Isn't Secure (Yet)",
+    description: "This article explores the emerging trust gap in decentralized AI training — highlighting how large-scale models can now be trained across distributed nodes, but lack reliable ways to verify the integrity of contributions. Proposes real-world experimentation on Akash to test gradient poisoning and detection methods.",
+    ambassador: "Asad Rizvi",
+    university: "Cornell University",
+    month: "March 2026",
+    link: "https://x.com/carne_asado/status/2037748594980110750?s=20",
+    featured: true
+  },
+  {
+    path: "content",
+    title: "The Permissionless Shortcut: Why Ambassador Programs are the New Web3 Internship",
+    description: "This article explores how ambassador programs are replacing traditional Web3 internships by prioritizing real contributions over resumes. It highlights how building in public, shipping work, and engaging directly with ecosystems like Akash creates faster, more direct paths into the industry.",
+    ambassador: "Shelby Peris",
+    university: "Program Lead",
+    month: "February 2026",
+    link: "https://akash.network/blog/the-permissionless-shortcut-why-ambassador-program-are-the-new-web3-internship/"
+  },
+  {
+    path: "content",
+    title: "Thoughts on Startup: Horizontal, Vertical, or Something in Between",
+    description: "This article explores how the line between horizontal and vertical startups is blurring, with many companies adopting a more composable approach. It highlights how platforms like Akash serve as foundational infrastructure, enabling startups to build faster and focus on domain-specific value.",
+    ambassador: "Helen Hui",
+    university: "Princeton University",
+    month: "February 2026",
+    link: "https://x.com/AkashStudents/status/2020934825843257826"
+  },
+  {
+    path: "events",
+    title: "Intro to Akash with ColorStack @ USC",
+    description: "Led an Intro to Akash session with ColorStack at USC, an incredible community supporting Black, Indigenous, and Latinx CS students, driving strong engagement and demand for a follow-up next semester.",
+    ambassador: "Alex Diaz",
+    university: "University of Southern California",
+    month: "December 2025",
+    link: ""
+  },
+  {
+    path: "events",
+    title: "Blockchain @ USC Mixer feat. Akash",
+    description: "Hosted a blockchain meetup introducing students to decentralized cloud computing and the Akash Network, with a strong turnout from the community. The event combined learning, conversation, and community-building over pizza and refreshments.",
+    ambassador: "Alex Diaz & Alon Mutter",
+    university: "University of Southern California",
+    month: "January 2026",
+    link: "https://x.com/AkashStudents/status/2014779402601779470?s=20"
+  },
+  {
+    path: "events",
+    title: "Cloud Deployment Workshop with AI @ Princeton",
+    description: "Hosted a Cloud Deployment Workshop with AI@Princeton, where students were introduced to Akash for the first time. The session included a live deployment demo followed by an interactive Q&A, helping students understand how to get started building on decentralized cloud infrastructure.",
+    ambassador: "Helen Hui",
+    university: "Princeton University",
+    month: "February 2026",
+    link: "https://x.com/AkashStudents/status/2026782629736100162?s=20"
+  },
+  {
+    path: "technical",
+    title: "How to Self-Host Clawdbot for Free",
+    description: "Built a guide for deploying Clawdbot on Akash, covering setup, configuration, and dashboard access — enabling a low-cost, customizable AI assistant without relying on traditional cloud providers.",
+    ambassador: "Lucas Botbol",
+    university: "UT Austin",
+    month: "January 2026",
+    link: "https://x.com/BotbolLucas/status/2017733501987033395?s=20"
+  },
+  {
+    path: "technical",
+    title: "How to Self-Host the Cheapest n8n Server",
+    description: "Built a guide for deploying a low-cost, self-hosted n8n server on Akash, covering template setup, configuration, and deployment — showing how to run automation infrastructure without expensive cloud providers.",
+    ambassador: "Lucas Botbol",
+    university: "UT Austin",
+    month: "December 2025",
+    link: "https://x.com/BotbolLucas/status/2005386440545538217"
+  },
+  {
+    path: "technical",
+    title: "Zcash x Akash: Open-Source Node Deployment",
+    description: "Built and deployed an open-source project connecting Zcash infrastructure to Akash's decentralized cloud, enabling node deployment without relying on traditional providers like AWS or GCP. This contribution demonstrates how decentralized compute can support real blockchain infrastructure while strengthening collaboration between the Akash and Zcash ecosystems.",
+    ambassador: "Alex Diaz",
+    university: "University of Southern California",
+    month: "February 2026",
+    link: "https://x.com/AkashStudents/status/2019128348417634562?s=20",
+    featured: true
+  },
+  {
+    path: "technical",
+    title: "From Video to Content: AI-Powered Post Generation on Akash",
+    description: "Built an AI tool that converts short-form videos into strategic content for X, LinkedIn, and blogs. Developed using Akash ML and deployed via the Akash Console, gaining hands-on experience building and shipping on decentralized infrastructure.",
+    ambassador: "Ayati Ogochukwu",
+    university: "University of Southwales Cardiff",
+    month: "February 2026",
+    link: "https://t.me/ayati_vid_bot"
+  },
+  {
+    path: "events",
+    title: "UT Austin x Akash: Live OpenClaw Deployment",
+    description: "This event brought together 30 UT Austin students for a hands-on introduction to Akash, including a live OpenClaw deployment. The session moved students from awareness to real confidence, with 5 builders preparing to deploy at upcoming hackathons. It highlights how in-person builder events drive ecosystem growth, from learning to active participation.",
+    ambassador: "Ayesha Satpathy & Lucas Botbol",
+    university: "UT Austin",
+    month: "February 2026",
+    link: "https://x.com/AkashStudents/status/2024979453240377674?s=20",
+    featured: true
+  },
+  {
+    path: "content",
+    title: "Cloud Laws vs. Innovation: Why Decentralized Infrastructure Wins",
+    description: "This blog post explores how differences in cloud regulations across Europe and the U.S. create friction for global builders. It shows how centralized infrastructure struggles with data sovereignty constraints, and how Akash's decentralized network enables borderless, lower-cost deployment without those tradeoffs.",
+    ambassador: "Hugo David",
+    university: "Ecole 42 (Marseille)",
+    month: "March 2026",
+    link: "https://akash.network/community/contributions/cloud-war/",
+    featured: true
+  },
+  {
+    path: "content",
+    title: "Introduction to Akash Network + Console (French Tutorial)",
+    description: "This video introduces the Akash Network and walks through how to use the Akash Console, with a focus on helping new users get started quickly. Created in French, it expands accessibility for non-English-speaking builders and lowers the barrier to entry for engaging with decentralized cloud infrastructure. The tutorial covers core concepts, basic navigation, and how to begin deploying on Akash.",
+    ambassador: "Hugo David",
+    university: "Ecole 42 (Marseille)",
+    month: "March 2026",
+    link: "https://www.youtube.com/watch?v=qrrjuLhv9So",
+    featured: true
+  },
+  {
+    path: "content",
+    title: "Who Really Wins the AI Compute War?",
+    description: "This LinkedIn post explores how control over AI compute is concentrated among a few centralized providers, and what that means for builders. It introduces Akash as a decentralized alternative, unlocking unused global compute and enabling more open, scalable infrastructure for AI. The piece also points to a shift toward agent-driven systems that can autonomously deploy and manage compute on-chain.",
+    ambassador: "Ayesha Satpathy",
+    university: "UT Austin",
+    month: "March 2026",
+    link: "https://www.linkedin.com/posts/ayeshasatpathy_akashnetwork-akashambassadors-activity-7441903228780441600-_kIy?utm_medium=ios_app&rcm=ACoAADl2CroBVl3Y--ZsrolprCV-0LJDfi1uJXU&utm_source=social_share_send&utm_campaign=copy_link"
+  },
+];
+</script>
+<!-- ═══════════════════════════════════════════════════════════
+     End of update zone. Don't edit below unless changing design.
+════════════════════════════════════════════════════════════ -->
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-logo">
+    <img src="akash-uni-pro-d.svg" alt="Akash University Program" />
+  </div>
+  <h1>Ambassador <em>Contributions</em> Showcase</h1>
+  <p>Real work, real impact — highlighting what our student ambassadors are building, writing, hosting, and growing across the globe.</p>
+  <a href="https://x.com/AkashStudents" target="_blank" class="hero-x-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    Learn More
+  </a>
+</section>
+
+<!-- STATS -->
+<div class="stats-ambassador-section">
+  <div class="stats-ambassador-inner">
+    <div class="stats-inner" id="stats-inner">
+      <div class="stat">
+        <span class="stat-number" id="stat-total">0</span>
+        <span class="stat-label">Total Contributions</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" id="stat-ambassadors">0</span>
+        <span class="stat-label">Active Ambassadors</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" id="stat-universities">0</span>
+        <span class="stat-label">Universities</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="filter-section">
+  <div class="filter-label">Filter by path</div>
+  <div class="filters">
+    <button class="filter-btn active" data-path="all">All Contributions</button>
+    <button class="filter-btn" data-path="technical">
+      <span class="path-dot" style="background:var(--technical)"></span> Technical
+    </button>
+    <button class="filter-btn" data-path="events">
+      <span class="path-dot" style="background:var(--events)"></span> Events
+    </button>
+    <button class="filter-btn" data-path="content">
+      <span class="path-dot" style="background:var(--content)"></span> Content Creation
+    </button>
+    <button class="filter-btn" data-path="community">
+      <span class="path-dot" style="background:var(--community)"></span> Community Building
+    </button>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="grid-section">
+  <div class="grid" id="grid">
+    <div class="no-results" id="no-results">No contributions found for this filter.</div>
+  </div>
+</div>
+
+<!-- AMBASSADOR CAROUSEL -->
+<div class="photo-carousel-section">
+  <div class="stats-ambassador-inner">
+    <div class="ambassador-heading">Meet the Ambassadors</div>
+    <div class="photo-carousel-inner">
+      <button class="pca-btn" id="pcPrev">&#8592;</button>
+      <div class="photo-carousel-track-wrap">
+        <div class="photo-carousel-track" id="pcTrack"></div>
+      </div>
+      <button class="pca-btn" id="pcNext">&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-section">
+  <div class="testimonials-label">What people are saying</div>
+  <div class="testimonials-grid">
+
+    <div class="tweet-card">
+      <div class="tweet-header">
+        <div class="tweet-author">
+          <div class="tweet-avatar">C</div>
+          <div>
+            <div class="tweet-name">CRYPTONIC</div>
+            <div class="tweet-handle">@cryptonhic</div>
+          </div>
+        </div>
+        <svg class="tweet-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </div>
+      <p class="tweet-body">Nice to see more local content. Breakdowns like this help onboard new users and make the ecosystem easier to understand. For <span class="highlight">$AKT</span>, that kind of grassroots growth matters, and on <span class="highlight">#MGBX</span>, it's the kind of signal traders keep an eye on.</p>
+    </div>
+
+    <div class="tweet-card">
+      <div class="tweet-header">
+        <div class="tweet-author">
+          <div class="tweet-avatar">K</div>
+          <div>
+            <div class="tweet-name">Kings1wealth</div>
+            <div class="tweet-handle">@kings1wealth</div>
+          </div>
+        </div>
+        <svg class="tweet-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </div>
+      <p class="tweet-body">This is another proof that <span class="highlight">@akashnet</span> <span class="highlight">$AKT</span> is underrated!! 🔥</p>
+    </div>
+
+    <div class="tweet-card">
+      <div class="tweet-header">
+        <div class="tweet-author">
+          <div class="tweet-avatar">x</div>
+          <div>
+            <div class="tweet-name">x1k</div>
+            <div class="tweet-handle">@x1knet</div>
+          </div>
+        </div>
+        <svg class="tweet-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </div>
+      <p class="tweet-body"><span class="highlight">@AkashStudents</span> is a small unnoticed group that is shipping. These students Rock 🤘 <span class="highlight">$AKT</span> <span class="highlight">@akashnet</span></p>
+    </div>
+
+    <div class="tweet-card">
+      <div class="tweet-header">
+        <div class="tweet-author">
+          <div class="tweet-avatar">J</div>
+          <div>
+            <div class="tweet-name">Jokee ✓</div>
+            <div class="tweet-handle">@Jokee_web3</div>
+          </div>
+        </div>
+        <svg class="tweet-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </div>
+      <p class="tweet-body">Impressive win for IU ambassadors at UPenn! 🏆</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <h2>Want to be part of this?</h2>
+  <p>The Akash University Program is open to students passionate about Web3, AI, and decentralized infrastructure.</p>
+  <a class="cta-btn" href="https://akash.network" target="_blank">Apply to the Program →</a>
+  <p class="footer-copy">© 2026 Akash Network · Student Ambassador Program · <a href="admin-form.html" style="color:#444;text-decoration:none;">Manage</a></p>
+</footer>
+
+<script>
+  /* ── Merge hardcoded + form submissions ───────────────── */
+  // Merge localStorage submissions + hardcoded, deduplicated by title.
+  // New admin form entries appear instantly; once baked into the array above they won't duplicate.
+  const STORAGE_KEY = 'akash_contributions';
+  function getSubmitted() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+    catch { return []; }
+  }
+  const submitted = getSubmitted();
+  // Build a lookup of localStorage entries by title so we can inherit their images
+  const submittedByTitle = {};
+  submitted.forEach(s => { submittedByTitle[s.title] = s; });
+
+  // For hardcoded entries, inherit any images uploaded via the admin form
+  const mergedContributions = contributions.map(c => {
+    const ls = submittedByTitle[c.title];
+    if (ls && (ls.images && ls.images.length || ls.image)) {
+      return { ...c, images: ls.images || (ls.image ? [ls.image] : []) };
+    }
+    return c;
+  });
+
+  // Add genuinely new localStorage entries (not yet baked in)
+  const bakedTitles = new Set(contributions.map(c => c.title));
+  const newOnly = submitted.filter(s => !bakedTitles.has(s.title));
+
+  // "All" tab: featured first (by date), then rest by date
+  const allContributions = [...newOnly, ...mergedContributions].sort((a, b) => {
+    const aF = a.featured ? 1 : 0, bF = b.featured ? 1 : 0;
+    if (bF !== aF) return bF - aF;
+    return new Date(b.month) - new Date(a.month);
+  });
+
+  /* ── Build cards ──────────────────────────────────────── */
+  const pathLabels = {
+    technical: "Technical",
+    events: "Events",
+    content: "Content Creation",
+    community: "Community Building"
+  };
+
+  function initials(name) {
+    return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+  }
+
+  function buildCarousel(images) {
+    if (!images || images.length === 0) return '';
+    if (images.length === 1) {
+      return `<img class="card-image" src="${images[0]}" alt=""/>`;
+    }
+    const dots = images.map((_, i) =>
+      `<span class="carousel-dot${i === 0 ? ' active' : ''}" data-idx="${i}"></span>`
+    ).join('');
+    const imgs = images.map(src => `<img src="${src}" alt=""/>`).join('');
+    return `
+      <div class="card-carousel">
+        <div class="carousel-track">${imgs}</div>
+        <button class="carousel-btn prev" disabled>&#8249;</button>
+        <button class="carousel-btn next">&#8250;</button>
+        <div class="carousel-dots">${dots}</div>
+      </div>`;
+  }
+
+  function initCarousels() {
+    document.querySelectorAll('.card-carousel').forEach(carousel => {
+      const track   = carousel.querySelector('.carousel-track');
+      const prevBtn = carousel.querySelector('.carousel-btn.prev');
+      const nextBtn = carousel.querySelector('.carousel-btn.next');
+      const dots    = carousel.querySelectorAll('.carousel-dot');
+      const total   = dots.length;
+      let idx = 0;
+
+      function goTo(n) {
+        idx = Math.max(0, Math.min(total - 1, n));
+        track.style.transform = `translateX(-${idx * 100}%)`;
+        prevBtn.disabled = idx === 0;
+        nextBtn.disabled = idx === total - 1;
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      }
+
+      prevBtn.addEventListener('click', e => { e.stopPropagation(); goTo(idx - 1); });
+      nextBtn.addEventListener('click', e => { e.stopPropagation(); goTo(idx + 1); });
+      dots.forEach((d, i) => d.addEventListener('click', e => { e.stopPropagation(); goTo(i); }));
+    });
+  }
+
+  function buildCards() {
+    const grid = document.getElementById('grid');
+    allContributions.forEach(c => {
+      const imgs = (c.images && c.images.length) ? c.images : (c.image ? [c.image] : []);
+
+      const card = document.createElement('div');
+      card.className = 'card' + (c.featured ? ' featured' : '');
+      card.dataset.path = c.path;
+      card.dataset.month = c.month;
+      card.dataset.featured = c.featured ? 'true' : 'false';
+      card.innerHTML = `
+        ${buildCarousel(imgs)}
+        <div class="card-body">
+          <div class="card-header">
+            <div class="card-header-left">
+              <span class="path-badge ${c.path}">${pathLabels[c.path]}</span>
+              ${c.featured ? `<span class="star-badge">⭐ Standout</span>` : ''}
+              ${c.pr ? `<span class="pr-badge">⌥ PR</span>` : ''}
+            </div>
+            <span class="card-month">${c.month}</span>
+          </div>
+          <div class="card-title">${c.title}</div>
+          <div class="card-desc">${c.description}</div>
+          ${c.link ? `<a class="card-link" href="${c.link}" target="_blank">View contribution →</a>` : ''}
+          <div class="card-footer">
+            <div class="avatar">${initials(c.ambassador)}</div>
+            <div class="ambassador-info">
+              <div class="ambassador-name">${c.ambassador}</div>
+              <div class="ambassador-uni">${c.university}</div>
+            </div>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  /* ── Stats ────────────────────────────────────────────── */
+  function countStat(key, targetEl) {
+    let values;
+    if (key === 'total') {
+      values = allContributions.length;
+    } else if (key === 'ambassadors') {
+      values = new Set(allContributions.map(c => c.ambassador)).size;
+    } else if (key === 'universities') {
+      values = new Set(allContributions.map(c => c.university)).size;
+    } else if (key === 'countries') {
+      values = new Set(allContributions.map(c => c.university)).size; // grows naturally as real data comes in
+    }
+    animateCount(targetEl, values);
+  }
+
+  function animateCount(el, target) {
+    let current = 0;
+    const step = Math.ceil(target / 30);
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = current;
+      if (current >= target) clearInterval(timer);
+    }, 30);
+  }
+
+  /* ── Filters ──────────────────────────────────────────── */
+  function initFilters() {
+    const btns  = document.querySelectorAll('.filter-btn');
+    const grid  = document.getElementById('grid');
+    const noResults = document.getElementById('no-results');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const path = btn.dataset.path;
+
+        // Show / hide
+        const allCards = Array.from(document.querySelectorAll('.card'));
+        let visible = 0;
+        allCards.forEach(card => {
+          const show = path === 'all' || card.dataset.path === path;
+          card.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+
+        // Re-order DOM
+        const visibleCards = allCards.filter(c => !c.classList.contains('hidden'));
+        if (path === 'all') {
+          // Featured first, then by date
+          visibleCards.sort((a, b) => {
+            const aF = a.dataset.featured === 'true' ? 1 : 0;
+            const bF = b.dataset.featured === 'true' ? 1 : 0;
+            if (bF !== aF) return bF - aF;
+            return new Date(b.dataset.month) - new Date(a.dataset.month);
+          });
+        } else {
+          // Pure date sort for path tabs
+          visibleCards.sort((a, b) => new Date(b.dataset.month) - new Date(a.dataset.month));
+        }
+        visibleCards.forEach(c => grid.appendChild(c));
+
+        noResults.classList.toggle('visible', visible === 0);
+      });
+    });
+  }
+
+  /* ── Init ─────────────────────────────────────────────── */
+  buildCards();
+  initCarousels();
+  initFilters();
+  countStat('total',        document.getElementById('stat-total'));
+  countStat('ambassadors',  document.getElementById('stat-ambassadors'));
+  countStat('universities', document.getElementById('stat-universities'));
+</script>
+
+<script>
+/* ── PHOTO CAROUSEL (page-level) ───────────────────────── */
+function initPhotoCarousel() {
+  const track   = document.getElementById('pcTrack');
+  const prevBtn = document.getElementById('pcPrev');
+  const nextBtn = document.getElementById('pcNext');
+
+  const SLIDES_VISIBLE = 7;
+  let currentIndex = 0;
+
+  // Merge hardcoded photos with any uploaded via the admin form
+  const PLACEHOLDER_COUNT = 7;
+  const lsPhotos = JSON.parse(localStorage.getItem('akash_carousel_photos') || '[]');
+  const allPhotos = [...(carouselPhotos || []), ...lsPhotos];
+  const photos = allPhotos.length
+    ? allPhotos
+    : Array.from({ length: PLACEHOLDER_COUNT }, () => ({ src: null, caption: '' }));
+
+  // Render slides — circular style
+  photos.forEach((p, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'photo-carousel-slide';
+
+    // Caption can be "Name | Role" — split on pipe for two-line display
+    const parts = (p.caption || '').split('|').map(s => s.trim());
+    const name  = parts[0] || '';
+    const role  = parts[1] || '';
+
+    if (p.src) {
+      slide.innerHTML = `
+        <div class="slide-circle">
+          <img src="${p.src}" alt="${name || 'Ambassador photo ' + (i+1)}" loading="lazy">
+        </div>
+        ${name ? `<div class="slide-name">${name}</div>` : ''}
+        ${role ? `<div class="slide-caption">${role}</div>` : ''}
+      `;
+      // no click handler — photos are display only
+    } else {
+      slide.innerHTML = `
+        <div class="slide-circle-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="slide-name" style="color:#BBBBBB">Ambassador</div>
+      `;
+    }
+    track.appendChild(slide);
+  });
+
+  function updateNav() {
+    const slideW = track.firstElementChild ? track.firstElementChild.getBoundingClientRect().width : 0;
+    track.style.transform = `translateX(-${currentIndex * slideW}px)`;
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= photos.length - SLIDES_VISIBLE;
+  }
+
+  prevBtn.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; updateNav(); } });
+  nextBtn.addEventListener('click', () => { if (currentIndex < photos.length - SLIDES_VISIBLE) { currentIndex++; updateNav(); } });
+
+  window.addEventListener('resize', () => { currentIndex = 0; updateNav(); });
+  updateNav();
+}
+
+
+initPhotoCarousel();
+</script>
+</body>
+</html>

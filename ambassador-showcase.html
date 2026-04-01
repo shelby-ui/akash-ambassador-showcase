@@ -17,11 +17,11 @@
       --gray-light:#F0F0F0;
       --white:     #FFFFFF;
 
-      /* Path colors */
-      --technical: #3B82F6;
-      --events:    #8B5CF6;
-      --content:   #F59E0B;
-      --community: #10B981;
+      /* Path colors — monochromatic slate scale */
+      --technical: #1E293B;
+      --events:    #475569;
+      --content:   #64748B;
+      --community: #94A3B8;
     }
 
     body {
@@ -34,7 +34,7 @@
     /* ── HERO ─────────────────────────────────────────────── */
     .hero {
       background: var(--black);
-      padding: 60px 40px 70px;
+      padding: 60px 40px 40px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -72,6 +72,7 @@
       text-decoration: none;
       transition: background 0.18s, border-color 0.18s;
     }
+    .hero-x-btn--flat { margin-top: 0; }
     .hero-x-btn:hover {
       background: rgba(255,255,255,0.1);
       border-color: rgba(255,255,255,0.4);
@@ -92,6 +93,39 @@
       max-width: 540px;
       margin: 0 auto;
       line-height: 1.6;
+    }
+
+    /* ── LOGO TICKER ─────────────────────────────────────── */
+    .logo-ticker-section {
+      background: #F8F8F8;
+      padding: 20px 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #EBEBEB;
+    }
+    .logo-ticker-track-wrap {
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+    }
+    .logo-ticker-track {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+      width: max-content;
+      animation: ticker-scroll 32s linear infinite;
+    }
+    .logo-ticker-track:hover { animation-play-state: paused; }
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .logo-ticker-track img {
+      height: 44px;
+      width: auto;
+      opacity: 1;
+      flex-shrink: 0;
     }
 
     /* ── STATS (dark, matching hero) ──────────────────────── */
@@ -127,7 +161,7 @@
     }
     .stat {
       flex: 1;
-      padding: 28px 20px;
+      padding: 40px 20px;
       text-align: center;
       border-right: 1px solid rgba(255,255,255,0.08);
     }
@@ -325,50 +359,39 @@
     /* ── FILTERS ──────────────────────────────────────────── */
     .filter-section {
       max-width: 1100px;
-      margin: 36px auto 0;
+      margin: 52px auto 0;
       padding: 0 24px;
+      border-bottom: 1px solid #E8E8E8;
     }
-    .filter-label {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--black);
-      letter-spacing: -0.3px;
-      margin-bottom: 18px;
-      padding-bottom: 12px;
-      border-bottom: 3px solid var(--red);
-      display: inline-block;
-    }
+    .filter-label { display: none; }
     .filters {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 0;
     }
     .filter-btn {
-      padding: 9px 18px;
-      border-radius: 100px;
-      border: 1.5px solid #E0E0E0;
-      border-bottom-width: 3px;
-      background: var(--white);
+      padding: 10px 20px;
+      border-radius: 0;
+      border: none;
+      border-bottom: 2px solid transparent;
+      background: transparent;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 500;
       color: var(--gray-mid);
       cursor: pointer;
       transition: all 0.18s ease;
       display: flex;
       align-items: center;
-      gap: 0;
+      margin-bottom: -1px;
     }
     .filter-btn:hover {
-      border-color: #C8C8C8;
-      border-bottom-color: var(--black);
       color: var(--black);
+      border-bottom-color: #C0C0C0;
     }
     .filter-btn.active {
-      border-color: #E0E0E0;
-      border-bottom-color: var(--black);
-      border-bottom-width: 3px;
       color: var(--black);
-      background: var(--white);
+      font-weight: 600;
+      border-bottom-color: var(--black);
     }
     .filter-btn[data-path="technical"]:hover,
     .filter-btn[data-path="technical"].active  { border-bottom-color: var(--technical); color: var(--technical); }
@@ -379,24 +402,27 @@
     .filter-btn[data-path="community"]:hover,
     .filter-btn[data-path="community"].active  { border-bottom-color: var(--community); color: var(--community); }
     .path-dot { display: none; }
+    .filter-btn--standout { margin-left: auto; }
+    .filter-btn--standout:hover  { color: var(--red); border-bottom-color: var(--red); }
+    .filter-btn--standout.active { color: var(--red); border-bottom-color: var(--red); font-weight: 600; }
 
     /* ── GRID ─────────────────────────────────────────────── */
     .grid-section {
       max-width: 1100px;
-      margin: 32px auto 80px;
+      margin: 40px auto 100px;
       padding: 0 24px;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 20px;
+      gap: 28px;
     }
 
     /* ── CARD ─────────────────────────────────────────────── */
     .card {
       background: var(--white);
-      border-radius: 16px;
-      border: 1.5px solid #E8E8E8;
+      border-radius: 12px;
+      border: 1px solid #EBEBEB;
       padding: 0;
       display: flex;
       flex-direction: column;
@@ -404,14 +430,16 @@
       transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     .card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
+      top: 0; left: 0; bottom: 0;
+      width: 3px;
       z-index: 2;
-      background: #D0D0D0; /* fallback for any unmatched path */
+      background: #D8D8D8;
+      border-radius: 12px 0 0 12px;
     }
     .card[data-path="technical"]::before  { background: var(--technical); }
     .card[data-path="events"]::before     { background: var(--events); }
@@ -487,17 +515,17 @@
       border-bottom: 1px solid #F0F0F0;
     }
     .card-body {
-      padding: 20px 24px 24px;
+      padding: 22px 24px 24px 28px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       flex: 1;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.13), 0 4px 12px rgba(0,0,0,0.06);
-      border-color: #D0D0D0;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05);
+      border-color: #D8D8D8;
     }
     .card.hidden { display: none; }
 
@@ -517,10 +545,10 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-    .path-badge.technical  { background: #EFF6FF; color: var(--technical); }
-    .path-badge.events     { background: #F5F3FF; color: var(--events); }
-    .path-badge.content    { background: #FFFBEB; color: #D97706; }
-    .path-badge.community  { background: #ECFDF5; color: #059669; }
+    .path-badge.technical  { background: #F1F5F9; color: var(--technical); }
+    .path-badge.events     { background: #F1F5F9; color: var(--events); }
+    .path-badge.content    { background: #F1F5F9; color: var(--content); }
+    .path-badge.community  { background: #F1F5F9; color: var(--community); }
 
     .card-month {
       font-size: 12px;
@@ -530,16 +558,20 @@
     }
 
     .card-title {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--black);
       line-height: 1.3;
     }
     .card-desc {
       font-size: 14px;
-      color: #555;
-      line-height: 1.65;
+      color: #888;
+      line-height: 1.7;
       flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     .card-link {
       font-size: 13px;
@@ -572,20 +604,20 @@
       color: white;
       flex-shrink: 0;
     }
-    .card[data-path="technical"] .avatar  { background: var(--technical); }
-    .card[data-path="events"] .avatar     { background: var(--events); }
-    .card[data-path="content"] .avatar    { background: var(--content); }
-    .card[data-path="community"] .avatar  { background: var(--community); }
+    .card[data-path="technical"] .avatar,
+    .card[data-path="events"] .avatar,
+    .card[data-path="content"] .avatar,
+    .card[data-path="community"] .avatar  { background: #E8E8E8; color: #555; }
 
     .ambassador-info { flex: 1; }
     .ambassador-name {
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 600;
       color: var(--black);
       line-height: 1.2;
     }
     .ambassador-uni {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--gray-mid);
       margin-top: 2px;
     }
@@ -677,9 +709,19 @@
 ════════════════════════════════════════════════════════════ -->
 <script>
 const carouselPhotos = [
-  // { src: "https://example.com/photo.jpg", caption: "UPenn Blockchain Conference — March 2026" },
-  // { src: "https://example.com/photo2.jpg", caption: "MIT Bitcoin Expo — March 2026" },
-  // To add a photo: paste a URL or base64 string as the src value.
+  { src: "images/ambassadors/rachel.jpg",   caption: "Rachel Turner | Cornell University" },
+  { src: "images/ambassadors/nick.jpg",     caption: "Nick Hardy | Indiana University" },
+  { src: "images/ambassadors/kien.jpg",     caption: "Kien Nguyen | UMass Amherst" },
+  { src: "images/ambassadors/hrishabh.jpg", caption: "Hrishabh Ayush | Cornell University" },
+  { src: "images/ambassadors/ensar.jpg",    caption: "Ensar Burrja | Stony Brook University" },
+  { src: "images/ambassadors/Andy.jpg",     caption: "Andy Huynh | UMass Amherst" },
+  { src: "images/ambassadors/asad.jpg",     caption: "Asad Rizvi | Cornell University" },
+  { src: "images/ambassadors/lucas.jpg",    caption: "Lucas Botbol | UT Austin" },
+  { src: "images/ambassadors/ayesha.jpg",   caption: "Ayesha Satpathy | UT Austin" },
+  { src: "images/ambassadors/alex.jpg",     caption: "Alex Diaz | USC" },
+  { src: "images/ambassadors/michael.jpg",  caption: "Michael Abril | Babson College" },
+  { src: "images/ambassadors/hersh.jpg",    caption: "Hersh Joshi | USC" },
+  { src: "images/ambassadors/ayati.jpg",    caption: "Ayati Ogochukwu | Cornell University" },
 ];
 </script>
 
@@ -728,7 +770,8 @@ const contributions = [
     university: "Indiana University",
     month: "March 2026",
     link: "https://github.com/tharune/cronos-research",
-    featured: true
+    featured: true,
+    images: ["images/upenn-1.jpg", "images/upenn-2.jpg"]
   },
   {
     path: "community",
@@ -920,7 +963,7 @@ const contributions = [
     <img src="akash-uni-pro-d.svg" alt="Akash University Program" />
   </div>
   <h1>Ambassador <em>Contributions</em> Showcase</h1>
-  <p>Real work, real impact — highlighting what our student ambassadors are building, writing, hosting, and growing across the globe.</p>
+  <p>Real work, real impact — highlighting what our student ambassadors are building, writing, hosting, and growing across the globe. Interested in joining our next cohort? <a href="https://forms.gle/QgcqmMpoU94bWyvQA" target="_blank" style="color:inherit;text-decoration:underline;">Click here</a></p>
   <a href="https://x.com/AkashStudents" target="_blank" class="hero-x-btn">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     Learn More
@@ -947,6 +990,33 @@ const contributions = [
   </div>
 </div>
 
+<!-- LOGO TICKER -->
+<div class="logo-ticker-section">
+  <div class="logo-ticker-track-wrap">
+    <div class="logo-ticker-track">
+      <img src="logos/babson.png" alt="Babson College" />
+      <img src="logos/cornell.png" alt="Cornell University" />
+      <img src="logos/indiana.png" alt="Indiana University" />
+      <img src="logos/michigan.png" alt="University of Michigan" />
+      <img src="logos/princeton.png" alt="Princeton University" />
+      <img src="logos/stony-brook.png" alt="Stony Brook University" />
+      <img src="logos/umass-amherst.png" alt="UMass Amherst" />
+      <img src="logos/usc.png" alt="USC" />
+      <img src="logos/ut-austin.png" alt="UT Austin" />
+      <!-- Duplicate set for seamless infinite loop -->
+      <img src="logos/babson.png" alt="Babson College" />
+      <img src="logos/cornell.png" alt="Cornell University" />
+      <img src="logos/indiana.png" alt="Indiana University" />
+      <img src="logos/michigan.png" alt="University of Michigan" />
+      <img src="logos/princeton.png" alt="Princeton University" />
+      <img src="logos/stony-brook.png" alt="Stony Brook University" />
+      <img src="logos/umass-amherst.png" alt="UMass Amherst" />
+      <img src="logos/usc.png" alt="USC" />
+      <img src="logos/ut-austin.png" alt="UT Austin" />
+    </div>
+  </div>
+</div>
+
 <!-- FILTERS -->
 <div class="filter-section">
   <div class="filter-label">Filter by path</div>
@@ -964,6 +1034,7 @@ const contributions = [
     <button class="filter-btn" data-path="community">
       <span class="path-dot" style="background:var(--community)"></span> Community Building
     </button>
+    <button class="filter-btn filter-btn--standout" data-path="standout">Standout</button>
   </div>
 </div>
 
@@ -1047,6 +1118,34 @@ const contributions = [
         <svg class="tweet-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </div>
       <p class="tweet-body">Impressive win for IU ambassadors at UPenn! 🏆</p>
+    </div>
+
+    <div class="tweet-card">
+      <div class="tweet-header">
+        <div class="tweet-author">
+          <div class="tweet-avatar">H</div>
+          <div>
+            <div class="tweet-name">HighTower RPC Service ⭐</div>
+            <div class="tweet-handle">@htwtech_RPC</div>
+          </div>
+        </div>
+        <svg class="tweet-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </div>
+      <p class="tweet-body">this is impressive, congrats to the team!</p>
+    </div>
+
+    <div class="tweet-card">
+      <div class="tweet-header">
+        <div class="tweet-author">
+          <div class="tweet-avatar">S</div>
+          <div>
+            <div class="tweet-name">Spice Trader 🇺🇸🌶️ ✓</div>
+            <div class="tweet-handle">@Go1diLocks</div>
+          </div>
+        </div>
+        <svg class="tweet-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </div>
+      <p class="tweet-body">Akash Ambassadors is a breath of fresh air</p>
     </div>
 
   </div>
@@ -1225,7 +1324,11 @@ const contributions = [
         const allCards = Array.from(document.querySelectorAll('.card'));
         let visible = 0;
         allCards.forEach(card => {
-          const show = path === 'all' || card.dataset.path === path;
+          const show = path === 'all'
+            ? true
+            : path === 'standout'
+              ? card.dataset.featured === 'true'
+              : card.dataset.path === path;
           card.classList.toggle('hidden', !show);
           if (show) visible++;
         });

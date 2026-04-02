@@ -567,12 +567,29 @@
       font-size: 14px;
       color: #888;
       line-height: 1.7;
-      flex: 1;
       display: -webkit-box;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
+    .card-desc.expanded {
+      display: block;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+    .card-read-more {
+      font-size: 12px;
+      font-weight: 600;
+      color: #AAAAAA;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      margin-top: -4px;
+      transition: color 0.15s;
+    }
+    .card-read-more:hover { color: var(--red); }
     .card-link {
       font-size: 13px;
       font-weight: 600;
@@ -739,10 +756,21 @@ const contributions = [
   //   description: "",
   //   ambassador: "",
   //   university: "",
-  //   month: "March 2026",
+  //   month: "April 2026",
   //   link: "",
   //   featured: true      // optional — pins to top of All tab with ⭐
   // },
+  {
+    path: "technical",
+    title: "AkashTrainer: One-Message ML Training Agent on Akash GPUs",
+    description: "Built and submitted a PR for AkashTrainer, an OpenClaw-powered agent that automates end-to-end ML model training on Akash. Users simply send a GitHub repo link and the agent handles everything — spinning up a GPU deployment, running the training job, and reporting results. No manual configuration or SDL writing required. A major step toward making decentralized compute as easy as a single message.",
+    ambassador: "Huy Huynh & Kien Nguyen",
+    university: "University of Massachusetts Amherst",
+    month: "April 2026",
+    link: "https://www.youtube.com/watch?v=B5k4b93DT3Q&feature=youtu.be",
+    featured: true,
+    images: ["https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/akash-trainer.jpg"]
+  },
   {
     path: "content",
     title: "Stress Testing Trust in Decentralized AI (Ongoing Experiment)",
@@ -1223,6 +1251,16 @@ const contributions = [
       </div>`;
   }
 
+  function toggleDesc(i) {
+    const desc = document.getElementById('desc-' + i);
+    const btn  = desc && desc.nextElementSibling;
+    if (!desc) return;
+    const expanded = desc.classList.toggle('expanded');
+    if (btn && btn.classList.contains('card-read-more')) {
+      btn.textContent = expanded ? 'Read less ↑' : 'Read more ↓';
+    }
+  }
+
   function initCarousels() {
     document.querySelectorAll('.card-carousel').forEach(carousel => {
       const track   = carousel.querySelector('.carousel-track');
@@ -1268,7 +1306,8 @@ const contributions = [
             <span class="card-month">${c.month}</span>
           </div>
           <div class="card-title">${c.title}</div>
-          <div class="card-desc">${c.description}</div>
+          <div class="card-desc" id="desc-${i}">${c.description}</div>
+          <button class="card-read-more" onclick="toggleDesc(${i})">Read more ↓</button>
           ${c.link ? `<a class="card-link" href="${c.link}" target="_blank">View contribution →</a>` : ''}
           <div class="card-footer">
             <div class="avatar">${initials(c.ambassador)}</div>
@@ -1357,6 +1396,15 @@ const contributions = [
   /* ── Init ─────────────────────────────────────────────── */
   buildCards();
   initCarousels();
+  // Hide "Read more" buttons when description isn't actually clamped
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.card-desc').forEach(desc => {
+      const btn = desc.nextElementSibling;
+      if (btn && btn.classList.contains('card-read-more')) {
+        btn.style.display = desc.scrollHeight <= desc.clientHeight + 2 ? 'none' : '';
+      }
+    });
+  });
   initFilters();
   countStat('total',        document.getElementById('stat-total'));
   countStat('ambassadors',  document.getElementById('stat-ambassadors'));

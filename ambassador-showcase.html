@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Akash Student Program â Ambassador Showcase</title>
+  <title>Akash Student Program — Ambassador Showcase</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,7 +17,7 @@
       --gray-light:#F0F0F0;
       --white:     #FFFFFF;
 
-      /* Path colors â monochromatic slate scale */
+      /* Path colors — monochromatic slate scale */
       --technical: #1E293B;
       --events:    #475569;
       --content:   #64748B;
@@ -31,7 +31,7 @@
       min-height: 100vh;
     }
 
-    /* ââ HERO âââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ├── HERO ──────────────────────────────────────────────────────────────────────────────────────────────────── */
     .hero {
       background: var(--black);
       padding: 60px 40px 40px;
@@ -95,7 +95,7 @@
       line-height: 1.6;
     }
 
-    /* ââ LOGO TICKER âââââââââââââââââââââââââââââââââââââââ */
+    /* ├── LOGO TICKER ────────────────────────────────────────────────────────────────────────────────────────────── */
     .logo-ticker-section {
       background: #F8F8F8;
       padding: 20px 0;
@@ -128,7 +128,7 @@
       flex-shrink: 0;
     }
 
-    /* ââ STATS (dark, matching hero) ââââââââââââââââââââââââ */
+    /* ├── STATS (dark, matching hero) ────────────────────────────────────────────────────────────────────────────── */
     .stats-ambassador-section {
       background: var(--black);
       padding: 44px 0 40px;
@@ -194,11 +194,11 @@
       display: inline-block;
     }
 
-    /* ââ PHOTO CAROUSEL ââââââââââââââââââââââââââââââââââââ */
-    /* ââ AMBASSADOR PHOTO CAROUSEL âââââââââââââââââââââââââ */
-    /* ââ AMBASSADOR CAROUSEL (inside combined section) ââââââ */
+    /* ├── PHOTO CAROUSEL ────────────────────────────────────────────────────────────────────────────────────────── */
+    /* ├── AMBASSADOR PHOTO CAROUSEL ──────────────────────────────────────────────────────────────────────────────── */
+    /* ├── AMBASSADOR CAROUSEL (inside combined section) ────────────────────────────────────────────────────────── */
     .photo-carousel-section {
-      /* no background/border â handled by parent .stats-ambassador-section */
+      /* no background/border — handled by parent .stats-ambassador-section */
     }
     .photo-carousel-inner {
       display: flex;
@@ -294,7 +294,7 @@
       .slide-circle, .slide-circle-placeholder { width: 48px; height: 48px; }
     }
 
-    /* ââ TESTIMONIALS âââââââââââââââââââââââââââââââââââââââ */
+    /* ├── TESTIMONIALS ──────────────────────────────────────────────────────────────────────────────────────────── */
     .testimonials-section {
       max-width: 1100px;
       margin: 0 auto 72px;
@@ -356,7 +356,7 @@
     }
     .tweet-body .highlight { color: var(--red); font-weight: 600; }
 
-    /* ââ FILTERS ââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ├── FILTERS ───────────────────────────────────────────────────────────────────────────────────────────────── */
     .filter-section {
       max-width: 1100px;
       margin: 52px auto 0;
@@ -406,7 +406,46 @@
     .filter-btn--standout:hover  { color: var(--red); border-bottom-color: var(--red); }
     .filter-btn--standout.active { color: var(--red); border-bottom-color: var(--red); font-weight: 600; }
 
-    /* ââ GRID âââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* Search bar */
+    .search-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 24px 0;
+    }
+    .search-wrap {
+      position: relative;
+      max-width: 400px;
+    }
+    .search-wrap svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--gray-mid);
+      pointer-events: none;
+    }
+    .search-input {
+      width: 100%;
+      padding: 10px 14px 10px 40px;
+      border: 1.5px solid #E0E0E0;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--black);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-input:focus {
+      border-color: var(--black);
+    }
+    .search-input::placeholder {
+      color: #B0B0B0;
+    }
+
+    /* ├── GRID ──────────────────────────────────────────────────────────────────────────────────────────────────── */
     .grid-section {
       max-width: 1100px;
       margin: 40px auto 100px;
@@ -418,7 +457,7 @@
       gap: 28px;
     }
 
-    /* ââ CARD âââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ├── CARD ──────────────────────────────────────────────────────────────────────────────────────────────────── */
     .card {
       background: var(--white);
       border-radius: 12px;
@@ -446,7 +485,7 @@
     .card[data-path="content"]::before    { background: var(--content); }
     .card[data-path="community"]::before  { background: var(--community); }
 
-    /* ââ CARD CAROUSEL ââââââââââââââââââââââââââââââââââââââââ */
+    /* ├── CARD CAROUSEL ────────────────────────────────────────────────────────────────────────────────────────── */
     .card-carousel {
       position: relative;
       height: 200px;
@@ -639,7 +678,7 @@
       margin-top: 2px;
     }
 
-    /* ââ FEATURED CARDS âââââââââââââââââââââââââââââââââââââ */
+    /* ├── FEATURED CARDS ────────────────────────────────────────────────────────────────────────────────────────── */
     .card-header-left {
       display: flex;
       flex-direction: column;
@@ -664,7 +703,7 @@
       letter-spacing: 0.3px;
     }
 
-    /* ââ NO RESULTS âââââââââââââââââââââââââââââââââââââââââ */
+    /* ├── NO RESULTS ────────────────────────────────────────────────────────────────────────────────────────────── */
     .no-results {
       text-align: center;
       padding: 80px 20px;
@@ -674,7 +713,7 @@
     }
     .no-results.visible { display: block; }
 
-    /* ââ FOOTER âââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ├── FOOTER ────────────────────────────────────────────────────────────────────────────────────────────────── */
     footer {
       background: var(--black);
       color: var(--white);
@@ -719,11 +758,629 @@
 </head>
 <body>
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-     ð¸ PHOTO CAROUSEL â Add event / ambassador photos here
+<!-- ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+     📸 PHOTO CAROUSEL — Add event / ambassador photos here
      Each entry: { src: "URL_or_base64", caption: "Label" }
      Leave the array empty to show placeholder tiles.
-ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════ -->
+<script>
+const carouselPhotos = [
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/rachel.jpg",   caption: "Rachel Turner | Cornell University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/nick.jpg",     caption: "Nick Hardy | Indiana University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/kien.jpg",     caption: "Kien Nguyen | UMass Amherst" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/hrishabh.jpg", caption: "Hrishabh Ayush | Cornell University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/ensar.jpg",    caption: "Ensar Burrja | Stony Brook University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/Andy.jpg",     caption: "Andy Huynh | UMass Amherst" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/asad.jpg",     caption: "Asad Rizvi | Cornell University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/lucas.jpg",    caption: "Lucas Botbol | UT Austin" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/ayesha.jpg",   caption: "Ayesha Satpathy | UT Austin" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/alex.jpg",     caption: "Alex Diaz | USC" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/michael.jpg",  caption: "Michael Abril | Babson College" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/hersh.jpg",    caption: "Hersh Joshi | USC" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/ayati.jpg",    caption: "Ayati Ogochukwu | Cornell University" },
+];
+</script>
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-number {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--red);
+      letter-spacing: -1px;
+      line-height: 1;
+      display: block;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 6px;
+      display: block;
+    }
+    .ambassador-heading {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--black);
+      letter-spacing: -0.3px;
+      margin: 0 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--red);
+      display: inline-block;
+    }
+
+    /* ├── PHOTO CAROUSEL ────────────────────────────────────────────────────────────────────────────────────────── */
+    /* ├── AMBASSADOR PHOTO CAROUSEL ──────────────────────────────────────────────────────────────────────────────── */
+    /* ├── AMBASSADOR CAROUSEL (inside combined section) ────────────────────────────────────────────────────────── */
+    .photo-carousel-section {
+      /* no background/border — handled by parent .stats-ambassador-section */
+    }
+    .photo-carousel-inner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .photo-carousel-label { display: none; /* replaced by .ambassador-heading */ }
+    .photo-carousel-track-wrap {
+      flex: 1;
+      overflow: hidden;
+      min-width: 0;
+    }
+    .photo-carousel-track {
+      display: flex;
+      gap: 0;
+      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .photo-carousel-slide {
+      flex: 0 0 14.2857%; /* 7 visible at once */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 8px;
+    }
+    .photo-carousel-slide:hover .slide-circle {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(255,75,85,0.35);
+      border-color: var(--red);
+    }
+    .slide-circle {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #E0E0E0;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      border: 2px solid #E8E8E8;
+    }
+    .slide-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .slide-circle-placeholder {
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      background: #F0F0F0;
+      border: 2px dashed #CCCCCC;
+      display: flex; align-items: center; justify-content: center;
+      color: #BBBBBB;
+      flex-shrink: 0;
+    }
+    .slide-name {
+      margin-top: 7px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.25;
+      max-width: 80px;
+    }
+    .slide-caption {
+      margin-top: 2px;
+      font-size: 10px;
+      color: var(--gray-mid);
+      font-weight: 400;
+      line-height: 1.25;
+      max-width: 80px;
+    }
+    .pca-btn {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: var(--red);
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.15s;
+      line-height: 1;
+    }
+    .pca-btn:hover { background: #e03040; transform: scale(1.1); }
+    .pca-btn:disabled { opacity: 0.25; cursor: default; transform: none; }
+    .pca-btn:disabled:hover { background: var(--red); }
+
+
+    @media (max-width: 700px) {
+      .photo-carousel-slide { flex: 0 0 25%; }
+      .photo-carousel-label { display: none; }
+      .slide-circle, .slide-circle-placeholder { width: 48px; height: 48px; }
+    }
+
+    /* ├── TESTIMONIALS ──────────────────────────────────────────────────────────────────────────────────────────── */
+    .testimonials-section {
+      max-width: 1100px;
+      margin: 0 auto 72px;
+      padding: 0 24px;
+    }
+    .testimonials-label {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--black);
+      letter-spacing: -0.3px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--red);
+      display: inline-block;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+    }
+    .tweet-card {
+      background: var(--white);
+      border: 1.5px solid #E8E8E8;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: box-shadow 0.18s;
+    }
+    .tweet-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+    .tweet-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tweet-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tweet-avatar {
+     width: 38px; height: 38px;
+      border-radius: 50%;
+      background: #E8E8E8;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #555;
+      flex-shrink: 0;
+    }
+    .tweet-name { font-size: 14px; font-weight: 700; line-height: 1.2; }
+    .tweet-handle { font-size: 12px; color: var(--gray-mid); }
+    .tweet-x-icon { color: #AAA; flex-shrink: 0; }
+    .tweet-body {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #333;
+    }
+    .tweet-body .highlight { color: var(--red); font-weight: 600; }
+
+    /* ├── FILTERS ───────────────────────────────────────────────────────────────────────────────────────────────── */
+    .filter-section {
+      max-width: 1100px;
+      margin: 52px auto 0;
+      padding: 0 24px;
+      border-bottom: 1px solid #E8E8E8;
+    }
+    .filter-label { display: none; }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .filter-btn {
+      padding: 10px 20px;
+      border-radius: 0;
+      border: none;
+      border-bottom: 2px solid transparent;
+      background: transparent;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-mid);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: flex;
+      align-items: center;
+      margin-bottom: -1px;
+    }
+    .filter-btn:hover {
+      color: var(--black);
+      border-bottom-color: #C0C0C0;
+    }
+    .filter-btn.active {
+      color: var(--black);
+      font-weight: 600;
+      border-bottom-color: var(--black);
+    }
+    .filter-btn[data-path="technical"]:hover,
+    .filter-btn[data-path="technical"].active  { border-bottom-color: var(--technical); color: var(--technical); }
+    .filter-btn[data-path="events"]:hover,
+    .filter-btn[data-path="events"].active     { border-bottom-color: var(--events);    color: var(--events); }
+    .filter-btn[data-path="content"]:hover,
+    .filter-btn[data-path="content"].active    { border-bottom-color: var(--content);   color: var(--content); }
+    .filter-btn[data-path="community"]:hover,
+    .filter-btn[data-path="community"].active  { border-bottom-color: var(--community); color: var(--community); }
+    .path-dot { display: none; }
+    .filter-btn--standout { margin-left: auto; }
+    .filter-btn--standout:hover  { color: var(--red); border-bottom-color: var(--red); }
+    .filter-btn--standout.active { color: var(--red); border-bottom-color: var(--red); font-weight: 600; }
+
+    /* Search bar */
+    .search-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 24px 0;
+    }
+    .search-wrap {
+      position: relative;
+      max-width: 400px;
+    }
+    .search-wrap svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--gray-mid);
+      pointer-events: none;
+    }
+    .search-input {
+      width: 100%;
+      padding: 10px 14px 10px 40px;
+      border: 1.5px solid #E0E0E0;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--black);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-input:focus {
+      border-color: var(--black);
+    }
+    .search-input::placeholder {
+      color: #B0B0B0;
+    }
+
+    /* ├── GRID ──────────────────────────────────────────────────────────────────────────────────────────────────── */
+    .grid-section {
+      max-width: 1100px;
+      margin: 40px auto 100px;
+      padding: 0 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    /* ├── CARD ──────────────────────────────────────────────────────────────────────────────────────────────────── */
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid #EBEBEB;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 3px;
+      z-index: 2;
+      background: #D8D8D8;
+      border-radius: 12px 0 0 12px;
+    }
+    .card[data-path="technical"]::before  { background: var(--technical); }
+    .card[data-path="events"]::before     { background: var(--events); }
+    .card[data-path="content"]::before    { background: var(--content); }
+    .card[data-path="community"]::before  { background: var(--community); }
+
+    /* ├── CARD CAROUSEL ────────────────────────────────────────────────────────────────────────────────────────── */
+    .card-carousel {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: #000;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .carousel-track img {
+      flex-shrink: 0;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 32px; height: 32px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s, opacity 0.15s;
+      z-index: 3;
+      opacity: 0;
+      line-height: 1;
+    }
+    .card-carousel:hover .carousel-btn { opacity: 1; }
+    .carousel-btn:hover { background: rgba(255,75,85,0.85); }
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+    .carousel-btn[disabled] { display: none; }
+    .carousel-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%; transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      z-index: 3;
+    }
+    .carousel-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .carousel-dot.active {
+      background: white;
+      transform: scale(1.3);
+    }
+    /* single image (no carousel chrome needed) */
+    .card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .card-body {
+      padding: 22px 24px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05);
+      border-color: #D8D8D8;
+    }
+    .card.hidden { display: none; }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .path-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 5px 12px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .path-badge.technical  { background: #F1F5F9; color: var(--technical); }
+    .path-badge.events     { background: #F1F5F9; color: var(--events); }
+    .path-badge.content    { background: #F1F5F9; color: var(--content); }
+    .path-badge.community  { background: #F1F5F9; color: var(--community); }
+
+    .card-month {
+      font-size: 12px;
+      color: var(--gray-mid);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.7;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-desc.expanded {
+      display: block;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+    .card-read-more {
+      font-size: 12px;
+      font-weight: 600;
+      color: #AAAAAA;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      margin-top: -4px;
+      transition: color 0.15s;
+    }
+    .card-read-more:hover { color: var(--red); }
+    .card-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--red);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap 0.15s;
+    }
+    .card-link:hover { gap: 8px; }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid #F0F0F0;
+      margin-top: auto;
+    }
+    .avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .card[data-path="technical"] .avatar,
+    .card[data-path="events"] .avatar,
+    .card[data-path="content"] .avatar,
+    .card[data-path="community"] .avatar  { background: #E8E8E8; color: #555; }
+
+    .ambassador-info { flex: 1; }
+    .ambassador-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.2;
+    }
+    .ambassador-uni {
+      font-size: 11px;
+      color: var(--gray-mid);
+      margin-top: 2px;
+    }
+
+    /* ├── FEATURED CARDS ────────────────────────────────────────────────────────────────────────────────────────── */
+    .card-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .star-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.3px;
+    }
+    .pr-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--technical);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ├── NO RESULTS ────────────────────────────────────────────────────────────────────────────────────────────── */
+    .no-results {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--gray-mid);
+      display: none;
+      grid-column: 1/-1;
+    }
+    .no-results.visible { display: block; }
+
+    /* ├── FOOTER ────────────────────────────────────────────────────────────────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 60px 24px;
+    }
+    footer h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    footer p {
+      color: #888;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.18s;
+    }
+    .cta-btn:hover { background: var(--red-light); }
+    .footer-copy {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 40px 20px 50px; }
+      .stats-inner { flex-wrap: wrap; }
+      .stat { flex: 1 1 50%; border-bottom: 1px solid #E8E8E8; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+     📸 PHOTO CAROUSEL — Add event / ambassador photos here
+     Each entry: { src: "URL_or_base64", caption: "Label" }
+     Leave the array empty to show placeholder tiles.
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <script>
 const carouselPhotos = [
   { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/rachel.jpg",   caption: "Rachel Turner | Cornell University" },
@@ -742,14 +1399,14 @@ const carouselPhotos = [
 ];
 </script>
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-     ð§ EASY UPDATE ZONE â Edit contributions here each month
+<!-- ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+     🔧 EASY UPDATE ZONE — Edit contributions here each month
      Add a new object to the array following the same format.
      Paths: "technical" | "events" | "content" | "community"
-ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 <script>
 const contributions = [
-  // ââ ADD NEW ENTRIES HERE ââââââââââââââââââââââââââââââââââ
+  // ├── ADD NEW ENTRIES HERE ──────────────────────────────────────────────────────────────────────────────────────── 
   // {
   //   path: "technical",  // technical | events | content | community
   //   title: "",
@@ -758,16 +1415,55 @@ const contributions = [
   //   university: "",
   //   month: "April 2026",
   //   link: "",
-  //   featured: true      // optional â pins to top of All tab with â­
+  //   featured: true      // optional — pins to top of All tab with ⭐
   // },
   {
     path: "technical",
+    title: "First PR Merged: Fixing a Critical Gap in the Quick Start Guide",
+    description: "First PR merged to the Akash Console repo, adding a missing npm install step in the Quick Start guide. This removes a blocker that was causing errors for new users trying to run the project locally.",
+    ambassador: "Hrishabh Ayush",
+    university: "Cornell University",
+    month: "February 2026",
+    link: "https://github.com/akash-network/console/tree/main?tab=readme-ov-file#quick-start",
+    pr: true
+  },
+  {
+    path: "technical",
+    title: "Deployed Karpathy's Autoresearch on Akash",
+    description: "Added a one-click deploy template for Autoresearch, Andrej Karpathy's autonomous AI research framework, to the awesome-akash repository. The template lets anyone run self-directed LLM training experiments on a single GPU — the agent modifies code, trains in 5-minute bursts, evaluates, and repeats without human input. Makes GPU-powered autonomous research accessible through Akash's decentralized compute.",
+    ambassador: "Hrishabh Ayush",
+    university: "Cornell University",
+    month: "March 2026",
+    link: "https://github.com/hrishabhayush/awesome-akash/tree/templates/autoresearch/autoresearch",
+    pr: true
+  },
+  {
+    path: "technical",
+    title: "Second PR Merged: Fixing Env Setup in Quick Start",
+    description: "Submitted another PR to improve the README by adding the missing .env.local setup step. Without it, the app would crash on startup due to missing environment variables. This fix makes the Quick Start actually runnable and prevents early setup errors for new users.",
+    ambassador: "Hrishabh Ayush",
+    university: "Cornell University",
+    month: "March 2026",
+    link: "https://github.com/akash-network/console/tree/main?tab=readme-ov-file#quick-start",
+    pr: true
+  },
+  {
+    path: "content",
+    title: "Exploring Akash's Role in the Machine Economy",
+    description: "Analyzed Akash network activity and shared a thesis on where it's heading, highlighting how permissionless compute marketplaces enable AI agents to autonomously access and pay for infrastructure. Framed Akash as a potential foundation for the emerging machine economy.",
+    ambassador: "Alon Mutter",
+    university: "University of Southern California",
+    month: "January 2026",
+    link: "https://x.com/mutter88126/status/2008071052061225451?s=20"
+  },
+    {
+    path: "technical",
     title: "AkashTrainer: One-Message ML Training Agent on Akash GPUs",
-    description: "Built and submitted a PR for AkashTrainer, an OpenClaw-powered agent that automates end-to-end ML model training on Akash. Users simply send a GitHub repo link and the agent handles everything â spinning up a GPU deployment, running the training job, and reporting results. No manual configuration or SDL writing required. A major step toward making decentralized compute as easy as a single message.",
+    description: "Built and submitted a PR for AkashTrainer, an OpenClaw-powered agent that automates end-to-end ML model training on Akash. Users simply send a GitHub repo link and the agent handles everything — spinning up a GPU deployment, running the training job, and reporting results. No manual configuration or SDL writing required. A major step toward making decentralized compute as easy as a single message.",
     ambassador: "Huy Huynh & Kien Nguyen",
     university: "University of Massachusetts Amherst",
     month: "April 2026",
-    link: "https://www.youtube.com/watch?v=B5k4b93DT3Q&feature=youtu.be",
+    link: "https://github.com/akash-network/awesome-akash/tree/master/akash-trainer",
     featured: true,
     images: ["https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/akash-trainer.jpg"]
   },
@@ -850,7 +1546,7 @@ const contributions = [
   {
     path: "content",
     title: "The Backdoor in the Machine: Why Decentralized AI Isn't Secure (Yet)",
-    description: "This article explores the emerging trust gap in decentralized AI training â highlighting how large-scale models can now be trained across distributed nodes, but lack reliable ways to verify the integrity of contributions. Proposes real-world experimentation on Akash to test gradient poisoning and detection methods.",
+    description: "This article explores the emerging trust gap in decentralized AI training — highlighting how large-scale models can now be trained across distributed nodes, but lack reliable ways to verify the integrity of contributions. Proposes real-world experimentation on Akash to test gradient poisoning and detection methods.",
     ambassador: "Asad Rizvi",
     university: "Cornell University",
     month: "March 2026",
@@ -905,7 +1601,7 @@ const contributions = [
   {
     path: "technical",
     title: "How to Self-Host Clawdbot for Free",
-    description: "Built a guide for deploying Clawdbot on Akash, covering setup, configuration, and dashboard access â enabling a low-cost, customizable AI assistant without relying on traditional cloud providers.",
+    description: "Built a guide for deploying Clawdbot on Akash, covering setup, configuration, and dashboard access — enabling a low-cost, customizable AI assistant without relying on traditional cloud providers.",
     ambassador: "Lucas Botbol",
     university: "UT Austin",
     month: "January 2026",
@@ -914,7 +1610,7 @@ const contributions = [
   {
     path: "technical",
     title: "How to Self-Host the Cheapest n8n Server",
-    description: "Built a guide for deploying a low-cost, self-hosted n8n server on Akash, covering template setup, configuration, and deployment â showing how to run automation infrastructure without expensive cloud providers.",
+    description: "Built a guide for deploying a low-cost, self-hosted n8n server on Akash, covering template setup, configuration, and deployment — showing how to run automation infrastructure without expensive cloud providers.",
     ambassador: "Lucas Botbol",
     university: "UT Austin",
     month: "December 2025",
@@ -927,7 +1623,7 @@ const contributions = [
     ambassador: "Alex Diaz",
     university: "University of Southern California",
     month: "February 2026",
-    link: "https://x.com/AkashStudents/status/2019128348417634562?s=20",
+    link: "https://github.com/akash-network/awesome-akash/tree/master/zcash-zebra",
     featured: true
   },
   {
@@ -980,9 +1676,9 @@ const contributions = [
   },
 ];
 </script>
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
      End of update zone. Don't edit below unless changing design.
-ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════ -->
 
 
 <!-- HERO -->
@@ -991,7 +1687,7 @@ const contributions = [
     <img src="https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/akash-uni-pro-d.svg" alt="Akash University Program" />
   </div>
   <h1>Ambassador <em>Contributions</em> Showcase</h1>
-  <p>Real work, real impact â highlighting what our student ambassadors are building, writing, hosting, and growing across the globe. Interested in joining our next cohort? <a href="https://forms.gle/QgcqmMpoU94bWyvQA" target="_blank" style="color:inherit;text-decoration:underline;">Click here</a></p>
+  <p>Real work, real impact — highlighting what our student ambassadors are building, writing, hosting, and growing across the globe. Interested in joining our next cohort? <a href="https://forms.gle/QgcqmMpoU94bWyvQA" target="_blank" style="color:inherit;text-decoration:underline;">Click here</a></p>
   <a href="https://x.com/AkashStudents" target="_blank" class="hero-x-btn">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     Learn More
@@ -1068,6 +1764,14 @@ const contributions = [
   </div>
 </div>
 
+<!-- SEARCH -->
+<div class="search-section">
+  <div class="search-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" class="search-input" id="search-input" placeholder="Search by name, keyword, or university" />
+  </div>
+</div>
+
 <!-- GRID -->
 <div class="grid-section">
   <div class="grid" id="grid">
@@ -1119,7 +1823,7 @@ const contributions = [
         </div>
         <svg class="tweet-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </div>
-      <p class="tweet-body">This is another proof that <span class="highlight">@akashnet</span> <span class="highlight">$AKT</span> is underrated!! ð¥</p>
+      <p class="tweet-body">This is another proof that <span class="highlight">@akashnet</span> <span class="highlight">$AKT</span> is underrated!! 🔥</p>
     </div>
 
     <div class="tweet-card">
@@ -1133,7 +1837,7 @@ const contributions = [
         </div>
         <svg class="tweet-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </div>
-      <p class="tweet-body"><span class="highlight">@AkashStudents</span> is a small unnoticed group that is shipping. These students Rock ð¤ <span class="highlight">$AKT</span> <span class="highlight">@akashnet</span></p>
+      <p class="tweet-body"><span class="highlight">@AkashStudents</span> is a small unnoticed group that is shipping. These students Rock 🤘 <span class="highlight">$AKT</span> <span class="highlight">@akashnet</span></p>
     </div>
 
     <div class="tweet-card">
@@ -1141,13 +1845,13 @@ const contributions = [
         <div class="tweet-author">
           <div class="tweet-avatar">J</div>
           <div>
-            <div class="tweet-name">Jokee â</div>
+            <div class="tweet-name">Jokee ✓</div>
             <div class="tweet-handle">@Jokee_web3</div>
           </div>
         </div>
         <svg class="tweet-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </div>
-      <p class="tweet-body">Impressive win for IU ambassadors at UPenn! ð</p>
+      <p class="tweet-body">Impressive win for IU ambassadors at UPenn! 🏆</p>
     </div>
 
     <div class="tweet-card">
@@ -1155,7 +1859,7 @@ const contributions = [
         <div class="tweet-author">
           <div class="tweet-avatar">H</div>
           <div>
-            <div class="tweet-name">HighTower RPC Service â­</div>
+            <div class="tweet-name">HighTower RPC Service ⭐</div>
             <div class="tweet-handle">@htwtech_RPC</div>
           </div>
         </div>
@@ -1169,7 +1873,7 @@ const contributions = [
         <div class="tweet-author">
           <div class="tweet-avatar">S</div>
           <div>
-            <div class="tweet-name">Spice Trader ðºð¸ð¶ï¸ â</div>
+            <div class="tweet-name">Spice Trader 🇺🇸🌶️ ✓</div>
             <div class="tweet-handle">@Go1diLocks</div>
           </div>
         </div>
@@ -1185,13 +1889,13 @@ const contributions = [
 <footer>
   <h2>Join the Akash Student Program</h2>
   <p>For students building in AI, Web3, and decentralized infrastructure.</p>
-  <a class="cta-btn" href="https://akash.network" target="_blank">Apply to the Program â</a>
+  <a class="cta-btn" href="https://akash.network" target="_blank">Apply to the Program →</a>
   <p style="color:#666;font-size:14px;margin-top:14px;">Applications open May 2026</p>
-  <p class="footer-copy">Â© 2026 Akash Network Â· Student Ambassador Program Â· <a href="admin-form.html" style="color:#444;text-decoration:none;">Manage</a></p>
+  <p class="footer-copy">© 2026 Akash Network · Student Ambassador Program · <a href="admin-form.html" style="color:#444;text-decoration:none;">Manage</a></p>
 </footer>
 
 <script>
-  /* ââ Merge hardcoded + form submissions âââââââââââââââââ */
+  /* ├── Merge hardcoded + form submissions ─────────────────────────────────────────────────────────────── */
   // Merge localStorage submissions + hardcoded, deduplicated by title.
   // New admin form entries appear instantly; once baked into the array above they won't duplicate.
   const STORAGE_KEY = 'akash_contributions';
@@ -1224,7 +1928,7 @@ const contributions = [
     return new Date(b.month) - new Date(a.month);
   });
 
-  /* ââ Build cards ââââââââââââââââââââââââââââââââââââââââ */
+  /* ├── Build cards ───────────────────────────────────────────────────────────────────────────────────── */
   const pathLabels = {
     technical: "Technical",
     events: "Events",
@@ -1260,7 +1964,7 @@ const contributions = [
     if (!desc) return;
     const expanded = desc.classList.toggle('expanded');
     if (btn && btn.classList.contains('card-read-more')) {
-      btn.textContent = expanded ? 'Read less â' : 'Read more â';
+      btn.textContent = expanded ? 'Read less ↑' : 'Read more ↓';
     }
   }
 
@@ -1303,15 +2007,15 @@ const contributions = [
           <div class="card-header">
             <div class="card-header-left">
               <span class="path-badge ${c.path}">${pathLabels[c.path]}</span>
-              ${c.featured ? `<span class="star-badge">â­ Standout</span>` : ''}
-              ${c.pr ? `<span class="pr-badge">â¥ PR</span>` : ''}
+              ${c.featured ? `<span class="star-badge">⭐ Standout</span>` : ''}
+              ${c.pr ? `<span class="pr-badge">⌥ PR</span>` : ''}
             </div>
             <span class="card-month">${c.month}</span>
           </div>
           <div class="card-title">${c.title}</div>
           <div class="card-desc" id="desc-${i}">${c.description}</div>
-          <button class="card-read-more" onclick="toggleDesc(${i})">Read more â</button>
-          ${c.link ? `<a class="card-link" href="${c.link}" target="_blank">View contribution â</a>` : ''}
+          <button class="card-read-more" onclick="toggleDesc(${i})">Read more ↓</button>
+          ${c.link ? `<a class="card-link" href="${c.link}" target="_blank">View contribution →</a>` : ''}
           <div class="card-footer">
             <div class="avatar">${initials(c.ambassador)}</div>
             <div class="ambassador-info">
@@ -1325,7 +2029,7 @@ const contributions = [
     });
   }
 
-  /* ââ Stats ââââââââââââââââââââââââââââââââââââââââââââââ */
+  /* ├── Stats ────────────────────────────────────────────────────────────────────────────────────────── */
   function countStat(key, targetEl) {
     let values;
     if (key === 'total') {
@@ -1350,53 +2054,64 @@ const contributions = [
     }, 30);
   }
 
-  /* ââ Filters ââââââââââââââââââââââââââââââââââââââââââââ */
-  function initFilters() {
-    const btns  = document.querySelectorAll('.filter-btn');
-    const grid  = document.getElementById('grid');
+  /* ├── Filters ──────────────────────────────────────────────────────────────────────────────────────── */
+  function applyFilters() {
+    const grid = document.getElementById('grid');
     const noResults = document.getElementById('no-results');
+    const activeBtn = document.querySelector('.filter-btn.active');
+    const path = activeBtn ? activeBtn.dataset.path : 'all';
+    const query = (document.getElementById('search-input').value || '').toLowerCase().trim();
+
+    const allCards = Array.from(document.querySelectorAll('.card'));
+    let visible = 0;
+    allCards.forEach(card => {
+      let show = path === 'all'
+        ? true
+        : path === 'standout'
+          ? card.dataset.featured === 'true'
+          : card.dataset.path === path;
+
+      if (show && query) {
+        const text = (card.textContent || '').toLowerCase();
+        show = query.split(/\s+/).every(term => text.includes(term));
+      }
+
+      card.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+
+    const visibleCards = allCards.filter(c => !c.classList.contains('hidden'));
+    if (path === 'all') {
+      visibleCards.sort((a, b) => {
+        const aF = a.dataset.featured === 'true' ? 1 : 0;
+        const bF = b.dataset.featured === 'true' ? 1 : 0;
+        if (bF !== aF) return bF - aF;
+        return new Date(b.dataset.month) - new Date(a.dataset.month);
+      });
+    } else {
+      visibleCards.sort((a, b) => new Date(b.dataset.month) - new Date(a.dataset.month));
+    }
+    visibleCards.forEach(c => grid.appendChild(c));
+
+    noResults.classList.toggle('visible', visible === 0);
+  }
+
+  function initFilters() {
+    const btns = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('search-input');
 
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         btns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const path = btn.dataset.path;
-
-        // Show / hide
-        const allCards = Array.from(document.querySelectorAll('.card'));
-        let visible = 0;
-        allCards.forEach(card => {
-          const show = path === 'all'
-            ? true
-            : path === 'standout'
-              ? card.dataset.featured === 'true'
-              : card.dataset.path === path;
-          card.classList.toggle('hidden', !show);
-          if (show) visible++;
-        });
-
-        // Re-order DOM
-        const visibleCards = allCards.filter(c => !c.classList.contains('hidden'));
-        if (path === 'all') {
-          // Featured first, then by date
-          visibleCards.sort((a, b) => {
-            const aF = a.dataset.featured === 'true' ? 1 : 0;
-            const bF = b.dataset.featured === 'true' ? 1 : 0;
-            if (bF !== aF) return bF - aF;
-            return new Date(b.dataset.month) - new Date(a.dataset.month);
-          });
-        } else {
-          // Pure date sort for path tabs
-          visibleCards.sort((a, b) => new Date(b.dataset.month) - new Date(a.dataset.month));
-        }
-        visibleCards.forEach(c => grid.appendChild(c));
-
-        noResults.classList.toggle('visible', visible === 0);
+        applyFilters();
       });
     });
+
+    searchInput.addEventListener('input', applyFilters);
   }
 
-  /* ââ Init âââââââââââââââââââââââââââââââââââââââââââââââ */
+  /* ├── Init ─────────────────────────────────────────────────────────────────────────────────────────── */
   buildCards();
   initCarousels();
   // Hide "Read more" buttons when description isn't actually clamped
@@ -1415,7 +2130,7 @@ const contributions = [
 </script>
 
 <script>
-/* ââ PHOTO CAROUSEL (page-level) âââââââââââââââââââââââââ */
+/* ├── PHOTO CAROUSEL (page-level) ───────────────────────────────────────────────────────────────────── */
 function initPhotoCarousel() {
   const track   = document.getElementById('pcTrack');
   const prevBtn = document.getElementById('pcPrev');
@@ -1432,12 +2147,12 @@ function initPhotoCarousel() {
     ? allPhotos
     : Array.from({ length: PLACEHOLDER_COUNT }, () => ({ src: null, caption: '' }));
 
-  // Render slides â circular style
+  // Render slides — circular style
   photos.forEach((p, i) => {
     const slide = document.createElement('div');
     slide.className = 'photo-carousel-slide';
 
-    // Caption can be "Name | Role" â split on pipe for two-line display
+    // Caption can be "Name | Role" — split on pipe for two-line display
     const parts = (p.caption || '').split('|').map(s => s.trim());
     const name  = parts[0] || '';
     const role  = parts[1] || '';
@@ -1450,7 +2165,7 @@ function initPhotoCarousel() {
         ${name ? `<div class="slide-name">${name}</div>` : ''}
         ${role ? `<div class="slide-caption">${role}</div>` : ''}
       `;
-      // no click handler â photos are display only
+      // no click handler — photos are display only
     } else {
       slide.innerHTML = `
         <div class="slide-circle-placeholder">

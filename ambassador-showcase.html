@@ -658,6 +658,30 @@
       font-weight: 700;
       color: white;
       flex-shrink: 0;
+      overflow: hidden;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Two-photo stack for group contributions */
+    .avatar-group {
+      display: flex;
+      flex-shrink: 0;
+      height: 36px;
+    }
+    .avatar-group .avatar {
+      width: 32px;
+      height: 32px;
+      border: 2px solid white;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+      background: #E8E8E8;
+      align-self: center;
+    }
+    .avatar-group .avatar + .avatar {
+      margin-left: -10px;
     }
     .card[data-path="technical"] .avatar,
     .card[data-path="events"] .avatar,
@@ -770,6 +794,16 @@ const carouselPhotos = [
   { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/hrishabh.jpg", caption: "Hrishabh Ayush | Cornell University" },
   { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/ensar.jpg",    caption: "Ensar Burrja | Stony Brook University" },
   { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/Andy.jpg",     caption: "Andy Huynh | UMass Amherst" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/Mayukha.jpeg", caption: "Mayukha Ajeesh Ramsha Nath | New Jersey Institute of Technology" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/Marko.jpeg",   caption: "Marko Stojanovic | Fordham University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/Ourania.jpg",  caption: "Ourania Rahman | Fairleigh Dickinson University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/coby.jpeg",    caption: "Coby McClellan | Dickinson College" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/deepthi.jpg",  caption: "Deepthi Morusupalli | University of Texas at Austin" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/eren.jpg",     caption: "Eren Yegit | Dumlupinar University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/justin.jpg",   caption: "Justin Jiawei Li | Boston University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/max.jpeg",     caption: "Max Chen | Rice University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/thaurn.jpeg",  caption: "Tharun Ekambaram | Indiana University" },
+  { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/yash.jpg",     caption: "Yash Sanghvi | Santa Clara University" },
   { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/asad.jpg",     caption: "Asad Rizvi | Cornell University" },
   { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/lucas.jpg",    caption: "Lucas Botbol | UT Austin" },
   { src: "https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/ambassadors/ayesha.jpg",   caption: "Ayesha Satpathy | UT Austin" },
@@ -826,6 +860,101 @@ const contributions = [
   //   link: "",
   //   featured: true      // optional — pins to top of All tab with ⭐
   // },
+  {
+    path: "technical",
+    title: "GPU Compute Market Research Dashboard",
+    description: "Yash and Max are building an open-source GPU compute-market research dashboard as a contribution to the Akash ecosystem. The project uses Akash's on-chain marketplace data to study provider competition, available capacity, market concentration, and the bidding activity behind rental prices. The initial implementation includes a Next.js dashboard, a FastAPI backend, and a data pipeline for archiving blocks, capturing provider inventory, and reconstructing auctions from on-chain events. Auction reconstruction has been validated against real Akash GPU orders with transaction provenance preserved. The team is now working toward broader historical coverage, continuous collection, and price and competition metrics — giving developers, providers, and researchers a clearer view of how Akash's compute market operates.",
+    ambassador: "Yash Sanghvi & Max Chen",
+    university: "Santa Clara University & Rice University",
+    month: "October 2026",
+    link: "https://github.com/chennethelius/akash-compute-dashboard"
+  },
+  {
+    path: "technical",
+    title: "LLM Fine-Tuning on Akash GPUs with Axolotl",
+    description: "Ourania spun up a full LLM fine-tuning environment on Akash's GPU network by deploying the Axolotl template. The default template requested 24 vCPUs and 251 GB RAM, so it was right-sized to 8 vCPUs, 32 GB RAM, and 1 GPU to fit a student budget. Providers bid within seconds, and she picked an RTX 3090 for $0.19/hr — far cheaper than H100 bids at $2–$3/hr. The image pulled in under 3 minutes, and JupyterLab confirmed the GPU and Axolotl were ready to go. Security notes: a strong access token was set, a runtime limit was used as a safety net, and the deployment was closed when finished.",
+    ambassador: "Ourania Rahman",
+    university: "Fairleigh Dickinson University",
+    month: "October 2026",
+    link: ""
+  },
+  {
+    path: "content",
+    title: "LinkedIn: Sharing the OpenJEV Contribution",
+    description: "Following up on his awesome-akash template contribution, Coby shared his OpenJEV work with his professional network on LinkedIn — expanding visibility of Akash's open-source ecosystem to a broader developer audience.",
+    ambassador: "Coby McClellan",
+    university: "Dickinson College",
+    month: "October 2026",
+    link: "https://lnkd.in/p/ewJPHxp4"
+  },
+  {
+    path: "technical",
+    title: "Cosmos Omnibus: Directory Path Handling Fix",
+    description: "Submitted a PR to Akash's Cosmos Omnibus project fixing directory path handling so startup and snapshot operations work correctly when directory names contain spaces. A small but meaningful quality-of-life improvement for operators running Cosmos nodes on Akash.",
+    ambassador: "Justin Jiawei Li",
+    university: "Boston University",
+    month: "October 2026",
+    link: "https://github.com/akash-network/cosmos-omnibus/pull/1197",
+    pr: true
+  },
+  {
+    path: "technical",
+    title: "Akash Developer Guides: Added Tutorial & Deployment Links",
+    description: "Submitted a PR to Akash's website adding links to existing tutorials and deployment examples on the Developer Guides page. The update reused existing documentation wording and verified link resolution and website build — making it easier for new developers to discover ready-made examples.",
+    ambassador: "Justin Jiawei Li",
+    university: "Boston University",
+    month: "September 2026",
+    link: "https://github.com/akash-network/website/pull/1374",
+    pr: true
+  },
+  {
+    path: "technical",
+    title: "ZestHPC: Open Science Tool Roadmap on Akash",
+    description: "Hugo finalized the roadmap for ZestHPC — an open science tool being built on Akash — in collaboration with Joe. The roadmap sets the direction for an HPC-style scientific computing platform that leverages Akash's decentralized GPU marketplace, making serious research compute accessible outside of traditional hyperscaler infrastructure.",
+    ambassador: "Hugo David",
+    university: "École 42 (Paris)",
+    month: "September 2026",
+    link: "https://gitlab.com/zestlab-group/zesthpc/zesthpc/-/blob/main/ROADMAP.md"
+  },
+  {
+    path: "content",
+    title: "Deploying Linux on Akash Network: A Beginner's Guide",
+    description: "Mayukha created a step-by-step PDF guide documenting how to deploy a Linux server on the decentralized Akash Network in just five steps — at roughly $3/month compared to burning through Google Cloud credits. After trying a traditional cloud provider first and seeing how fast costs added up, she pivoted to a decentralized alternative, got it working on her own, and turned the entire process into a clear tutorial so others can follow it without the trial and error.",
+    ambassador: "Mayukha Ajeesh Ramsha Nath",
+    university: "New Jersey Institute of Technology",
+    month: "September 2026",
+    link: ""
+  },
+  {
+    path: "technical",
+    title: "OpenJEV Template on Awesome Akash",
+    description: "Coby contributed a template to the Awesome Akash repo based on the JEV model by Typesafe AI — a model that has been generating buzz in recent tech news. The template makes it easy for other builders to deploy and experiment with OpenJEV on Akash's decentralized compute.",
+    ambassador: "Coby McClellan",
+    university: "Dickinson College",
+    month: "September 2026",
+    link: "https://github.com/akash-network/awesome-akash/pull/850",
+    pr: true
+  },
+  {
+    path: "technical",
+    title: "Buzz Goose Agent on Akash with AkashML",
+    description: "Eren built and submitted a template that runs Goose as a Buzz agent on Akash, using AkashML as the model provider. The contribution makes it dramatically easier for builders to spin up agent workflows on decentralized compute without wiring up a separate LLM provider.",
+    ambassador: "Eren Yegit",
+    university: "Dumlupinar University",
+    month: "September 2026",
+    link: "https://github.com/akash-network/awesome-akash/pull/848",
+    pr: true
+  },
+  {
+    path: "events",
+    title: "Boba & Blockchain: Akash x Cornell Info Session (Round 2!)",
+    description: "Hrishabh and Rachel co-hosted an Akash x Cornell Blockchain event, giving an overview of Akash, discussing AI agents, and showing how to deploy on Akash — rounded out with free boba. The event drew ~25 attendees, with many walking away genuinely interested in getting credits to deploy on Akash themselves.",
+    ambassador: "Hrishabh Ayush & Rachel Turney",
+    university: "Cornell University",
+    month: "September 2026",
+    link: "",
+    images: ["https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/images/cornell-event-sept.jpg"]
+  },
   {
     path: "content",
     title: "Educational Content: Introducing Akash Network on Instagram",
@@ -1211,7 +1340,7 @@ const contributions = [
     <img src="https://cdn.jsdelivr.net/gh/shelby-ui/akash-ambassador-showcase@main/akash-uni-pro-d.svg" alt="Akash University Program" />
   </div>
   <h1>Ambassador <em>Contributions</em> Showcase</h1>
-  <p>Real work, real impact — highlighting what our student ambassadors are building, writing, hosting, and growing across the globe. Interested in joining our next cohort? <a href="https://forms.gle/twSBq9pKV6N9QdBXA" target="_blank" style="color:inherit;text-decoration:underline;">Apply Today</a></p>
+  <p>Real work, real impact — highlighting what our student ambassadors are building, writing, hosting, and growing across the globe.</p>
   <a href="https://x.com/AkashStudents" target="_blank" class="hero-x-btn">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     Learn More
@@ -1300,20 +1429,6 @@ const contributions = [
 <div class="grid-section">
   <div class="grid" id="grid">
     <div class="no-results" id="no-results">No contributions found for this filter.</div>
-  </div>
-</div>
-
-<!-- AMBASSADOR CAROUSEL -->
-<div class="photo-carousel-section">
-  <div class="stats-ambassador-inner">
-    <div class="ambassador-heading">Meet the Ambassadors</div>
-    <div class="photo-carousel-inner">
-      <button class="pca-btn" id="pcPrev">&#8592;</button>
-      <div class="photo-carousel-track-wrap">
-        <div class="photo-carousel-track" id="pcTrack"></div>
-      </div>
-      <button class="pca-btn" id="pcNext">&#8594;</button>
-    </div>
   </div>
 </div>
 
@@ -1445,10 +1560,9 @@ const contributions = [
   const bakedTitles = new Set(contributions.map(c => c.title));
   const newOnly = submitted.filter(s => !bakedTitles.has(s.title));
 
-  // "All" tab: featured first (by date), then rest by date
+  // "All" tab: chronological by month (newest first). Standouts mix in naturally;
+  // the dedicated Standout tab is where they get pinned together.
   const allContributions = [...newOnly, ...mergedContributions].sort((a, b) => {
-    const aF = a.featured ? 1 : 0, bF = b.featured ? 1 : 0;
-    if (bF !== aF) return bF - aF;
     return new Date(b.month) - new Date(a.month);
   });
 
@@ -1462,6 +1576,53 @@ const contributions = [
 
   function initials(name) {
     return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+  }
+
+  // Build an ambassador-name -> photo URL lookup from carouselPhotos (one source of truth)
+  const ambassadorPhotos = (() => {
+    const map = {};
+    (carouselPhotos || []).forEach(p => {
+      // caption format: "Name | University"
+      const name = (p.caption || '').split('|')[0].trim();
+      if (name) map[name.toLowerCase()] = p.src;
+    });
+    return map;
+  })();
+
+  function lookupPhoto(name) {
+    const key = name.toLowerCase();
+    const given = name.split(' ')[0].toLowerCase();
+    // Exact match first, then first-name match (handles "Rachel Turney" vs "Rachel Turner")
+    let photo = ambassadorPhotos[key];
+    if (!photo) {
+      const matchKey = Object.keys(ambassadorPhotos).find(k => k.split(' ')[0] === given);
+      if (matchKey) photo = ambassadorPhotos[matchKey];
+    }
+    return photo;
+  }
+
+  // Returns an HTML snippet for the avatar area in the card footer.
+  // Caller is responsible for the outer wrapper when there's a single avatar
+  // (so existing <div class="avatar">...</div> markup still works).
+  function renderAvatarSlot(ambassadorField) {
+    const names = ambassadorField.split(/\s*&\s*|\s*\+\s*/).map(s => s.trim()).filter(Boolean);
+    const matches = names.map(n => ({ name: n, photo: lookupPhoto(n) })).filter(m => m.photo);
+
+    // Two or more ambassadors with photos → show overlapping duo (first 2)
+    if (matches.length >= 2) {
+      const avatars = matches.slice(0, 2).map(m =>
+        `<div class="avatar"><img src="${m.photo}" alt="${m.name}" loading="lazy"/></div>`
+      ).join('');
+      return `<div class="avatar-group">${avatars}</div>`;
+    }
+
+    // One photo found (even if group entry) → single circle
+    if (matches.length === 1) {
+      return `<div class="avatar"><img src="${matches[0].photo}" alt="${matches[0].name}" loading="lazy" onerror="this.parentElement.textContent='${initials(ambassadorField)}'"/></div>`;
+    }
+
+    // No photos → initials
+    return `<div class="avatar">${initials(ambassadorField)}</div>`;
   }
 
   function buildCarousel(images) {
@@ -1541,7 +1702,7 @@ const contributions = [
           <button class="card-read-more" onclick="toggleDesc(${i})">Read more ↓</button>
           ${c.link ? `<a class="card-link" href="${c.link}" target="_blank">View contribution →</a>` : ''}
           <div class="card-footer">
-            <div class="avatar">${initials(c.ambassador)}</div>
+            ${renderAvatarSlot(c.ambassador)}
             <div class="ambassador-info">
               <div class="ambassador-name">${c.ambassador}</div>
               <div class="ambassador-uni">${c.university}</div>
@@ -1559,7 +1720,7 @@ const contributions = [
     if (key === 'total') {
       values = allContributions.length;
     } else if (key === 'ambassadors') {
-      values = new Set(allContributions.map(c => c.ambassador)).size;
+      values = 21; // Current cohort size — update when roster changes
     } else if (key === 'universities') {
       values = new Set(allContributions.map(c => c.university)).size;
     } else if (key === 'countries') {
@@ -1605,7 +1766,8 @@ const contributions = [
     });
 
     const visibleCards = allCards.filter(c => !c.classList.contains('hidden'));
-    if (path === 'all') {
+    if (path === 'standout') {
+      // Standout tab: featured first, then by date
       visibleCards.sort((a, b) => {
         const aF = a.dataset.featured === 'true' ? 1 : 0;
         const bF = b.dataset.featured === 'true' ? 1 : 0;
@@ -1613,6 +1775,7 @@ const contributions = [
         return new Date(b.dataset.month) - new Date(a.dataset.month);
       });
     } else {
+      // All other tabs (including "all"): chronological by month, newest first
       visibleCards.sort((a, b) => new Date(b.dataset.month) - new Date(a.dataset.month));
     }
     visibleCards.forEach(c => grid.appendChild(c));
